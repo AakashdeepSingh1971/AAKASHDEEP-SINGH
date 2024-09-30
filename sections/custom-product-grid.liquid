@@ -1,7 +1,7 @@
 <div class="productGrid">
   <div class="gridItem">
     <img width="100%" height="100%">
-    <buttom>+</buttom>
+    <buttom class="openPopup">+</buttom>
   </div>
   <div class="gridItem">
     <img width="100%" height="100%">
@@ -25,6 +25,14 @@
   </div>
 </div>
 
+<div class="popup" id="product-popup">
+  <div class="popup-content">
+    <span class="close-popup">X</span>
+    <div>popup</div>
+  </div>
+
+</div>
+
 <style>
   .productGrid {
     display: grid;
@@ -38,5 +46,37 @@
     opacity: 0;
 
   }
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+  }
+  .popup-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+
+    width: 311px;
+    height: 447px;
+
+    gap: 0;
+
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+
+  }
+
+</style>
+
+<style>
+  const button = document.querySelectorAll(".openPopup");
+  const closePopup = document.getElementByClassName("close-popup");
+  button.addEventListener("click", function() { document.getElementById("product-popup").style.display = "block"; });
+  closePopup.addEventListener("click", function() { document.getElementById("product-popup").style.display = "none"; });
 
 </style>
