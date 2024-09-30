@@ -1,5 +1,5 @@
 <header class="custom_header">
-  <h1>{{ section.settings.header_heading }}</h1>
+
   <p>{{ section.settings.header_subheading }}</p>
   <a href="{{section.settings.button_link}}" class="aniamted_button">
     {{
@@ -8,6 +8,9 @@
   </a>
 </header>
 <div class="custom-banner">
+    <div>
+        <img src="{{'Frame.svg'| asset_url}}" class="customHeaderImage" height="100%" width="100%">
+      </div>
   <h1>{{ section.settings.heading }}</h1>
   <p>{{ section.settings.subheading }}</p>
   <a href="{{section.settings.button_link}}" class="aniamted_button">
@@ -29,6 +32,7 @@
         "label": "Header Heading",
         "default": "TISSO VISON"
       },
+// add image in header heading 
       {
         "type": "text",
         "id": "header_subheading",
@@ -75,6 +79,16 @@
   .custom_header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    background-color: rgba(245, 245, 245, 1);
+    justify-content: space-between;
+    padding: 10px 50px;
+    height: 64px;
+  }
+  .custom_header p {
+    font-family: Jost;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 13.42px;
+    text-align: center;
   }
 </style>
