@@ -1,9 +1,5 @@
-
 <header class="custom_header">
-    <div>
-        {% comment %} <img src="{{'logo.svg'| asset_url}}" class="customHeaderImage" height="100%" width="100%"> {% endcomment %}
-         <img src="{{section.settings.header_image}}|{{'logo.svg'| asset_url}}" alt=""  height="100%" width="100%">
-      </div>
+  <h2>{{ section.settings.header_heading }}</h2>
   <p>{{ section.settings.header_subheading }}</p>
   <a href="{{section.settings.button_link}}" class="aniamted_button">
     {{
@@ -12,16 +8,31 @@
   </a>
 </header>
 <div class="custom-banner">
+  <div>
+    <img
+      src="{{'Frame.svg'| asset_url}}"
+      class="customHeaderImage"
+      height="100%"
+      width="100%">
+  </div>
+  <div>
     <div>
-        <img src="{{'Frame.svg'| asset_url}}" class="customHeaderImage" height="100%" width="100%">
-      </div>
-  <h1>{{ section.settings.heading }}</h1>
-  <p>{{ section.settings.subheading }}</p>
-  <a href="{{section.settings.button_link}}" class="aniamted_button">
-    {{
-      section.settings.button_text
-    }}
-  </a>
+      <h1>{{ section.settings.heading }}</h1>
+      <p>{{ section.settings.subheading }}</p>
+      <a href="{{section.settings.button_link}}" class="aniamted_button">
+        {{
+          section.settings.button_text
+        }}
+      </a>
+    </div>
+    <div>
+      <img
+        src="{{'FrameSamll.svg'| asset_url}}"
+        class="customHeaderImage"
+        height="100%"
+        width="100%"></div>
+  </div>
+
 
 </div>
 
@@ -31,12 +42,11 @@
     "name": "Custom Banner",
     "settings": [
       {
-        "type": "image_picker",
-        "id": "header_image",
-        "label": "Header Image",
-        "default":"'logo.svg'"
+        "type": "text",
+        "id": "header_heading",
+        "label": "Header Heading",
+        "default": "TISSO VISON"
       },
-// add image in header heading 
       {
         "type": "text",
         "id": "header_subheading",
@@ -97,4 +107,3 @@
     text-align: center;
   }
 </style>
-
