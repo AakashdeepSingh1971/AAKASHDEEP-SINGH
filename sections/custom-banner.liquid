@@ -22,7 +22,7 @@
       height="100%"
       width="100%">
   </div>
-  <div>
+  <div class="parentDiv">
     <div class="leftside">
       <h1>{{ section.settings.heading }}</h1>
       <p>{{ section.settings.subheading }}</p>
@@ -151,29 +151,29 @@
     line-height: 28px;
     text-align: left;
   }
-  .leftside a {
-    width: 220px;
-    height: 50px;
-    gap: 0;
-    opacity: 0;
-
-  }
   .rightside {
     flex: 1.5
   }
   .buttonDiv {
     width: 220px;
     height: 50px;
-    /* gap: 0px; */
-    opacity: 0;
     background: black;
     align-items: center;
     text-align: center;
   }
   .buttonDiv a {
     flex: 3;
+    width: 220px;
+    height: 50px;
+    color: #fff;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
   }
   .buttonDivimg {
     flex: 1;
+  }
+  .parentDiv {
+    display: flex;
   }
 </style>
