@@ -6,7 +6,7 @@
 
     <div class="gridItem">
       <img width="100%" height="100%">
-      <buttom class="openPopup" onclick="openPopup()">+</buttom>
+      <buttom class="openPopup" onclick="openPopupFunction()">+</buttom>
     </div>
     <div class="gridItem">
       <img width="100%" height="100%">
@@ -80,10 +80,8 @@
 </style>
 
 <script>
-  const button = document.querySelectorAll(".openPopup");
-  const closePopup = document.getElementsByClassName("close-popup");
   const popup = document.getElementById("product-popup");
-  function openPopup() { 
+  function openPopupFunction() { 
     //will add product details here
     popup.style.display = "block"; 
   };
