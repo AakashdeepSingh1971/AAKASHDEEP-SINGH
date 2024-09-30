@@ -15,17 +15,26 @@
       height="100%"
       width="100%">
   </div>
-  <div>
+  <div class="leftside">
     <div>
       <h1>{{ section.settings.heading }}</h1>
       <p>{{ section.settings.subheading }}</p>
-      <a href="{{section.settings.button_link}}" class="aniamted_button">
-        {{
-          section.settings.button_text
-        }}
-      </a>
+      <div class="buttonDiv">
+        <a href="{{section.settings.button_link}}">
+          {{
+            section.settings.button_text
+          }}
+        </a>
+        <img
+          src="{{'arrow.svg'| asset_url}}"
+          class="customHeaderImage"
+          height="100%"
+          width="100%">
+      </div>
+
+
     </div>
-    <div>
+    <div class="rightside">
       <img
         src="{{'FrameSamll.svg'| asset_url}}"
         class="customHeaderImage"
@@ -105,5 +114,45 @@
     font-weight: 400;
     line-height: 13.42px;
     text-align: center;
+  }
+  .leftside h1 {
+    font-family: Jost;
+    font-size: 70px;
+    font-weight: 500;
+    line-height: 70px;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+  }
+  .leftside {
+    flex: 1;
+    gap: 50px;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 67px;
+  }
+  .leftside p {
+    width: 487px;
+    font-family: Jost;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: left;
+  }
+  .leftside a {
+    width: 220px;
+    height: 50px;
+    gap: 0;
+    opacity: 0;
+
+  }
+  .rightside {
+    flex: 1.5
+  }
+  .buttonDiv {
+    display: flex;
+    justify-content: space-evenly;
   }
 </style>
