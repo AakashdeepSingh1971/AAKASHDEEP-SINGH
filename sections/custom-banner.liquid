@@ -1,3 +1,12 @@
+<header>
+  <h1>{{ section.settings.header_heading }}</h1>
+  <p>{{ section.settings.header_subheading }}</p>
+  <a href="{{section.settings.button_link}}" class="aniamted_button">
+    {{
+      section.settings.header_button_text
+    }}
+  </a>
+</header>
 <div class="custom-banner">
   <h1>{{ section.settings.heading }}</h1>
   <p>{{ section.settings.subheading }}</p>
@@ -14,6 +23,24 @@
   {
     "name": "Custom Banner",
     "settings": [
+      {
+        "type": "text",
+        "id": "header_heading",
+        "label": "Header Heading",
+        "default": "TISSO VISON"
+      },
+      {
+        "type": "text",
+        "id": "header_subheading",
+        "label": "Header Subheading",
+        "default": "Find the ideal gift for your loved ones."
+      },
+      {
+        "type": "text",
+        "id": "header_button_text",
+        "label": "Button Text",
+        "default": "SHOP NOW"
+      },
       {
         "type": "text",
         "id": "heading",
