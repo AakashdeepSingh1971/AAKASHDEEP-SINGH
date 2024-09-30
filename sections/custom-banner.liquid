@@ -1,4 +1,5 @@
-<header>
+
+<header class="custom_header">
   <h1>{{ section.settings.header_heading }}</h1>
   <p>{{ section.settings.header_subheading }}</p>
   <a href="{{section.settings.button_link}}" class="aniamted_button">
@@ -69,4 +70,14 @@
       }
     ]
   }
+
 {% endschema %}
+
+<style>
+  .custom_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+
