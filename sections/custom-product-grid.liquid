@@ -74,7 +74,8 @@
 <script>
   const button = document.querySelectorAll(".openPopup");
   const closePopup = document.getElementsByClassName("close-popup");
-  button.addEventListener("click", function() { document.getElementById("product-popup").style.display = "block"; });
-  closePopup.addEventListener("click", function() { document.getElementById("product-popup").style.display = "none"; });
+  const popup = document.getElementById("product-popup");
+  button.addEventListener("click", function() { popup.style.display = "block"; });
+  closePopup.addEventListener("click", function() { popup.style.display = "none"; });
 
 </script>
