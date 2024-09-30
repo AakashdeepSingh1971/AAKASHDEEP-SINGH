@@ -1,7 +1,8 @@
 
 <header class="custom_header">
     <div>
-        <img src="{{'logo.svg'| asset_url}}" class="customHeaderImage" height="100%" width="100%">
+        {% comment %} <img src="{{'logo.svg'| asset_url}}" class="customHeaderImage" height="100%" width="100%"> {% endcomment %}
+         <img src="{{section.settings.header_image}}|img_url : '300x300'" alt=""  height="100%" width="100%">
       </div>
   <p>{{ section.settings.header_subheading }}</p>
   <a href="{{section.settings.button_link}}" class="aniamted_button">
@@ -30,10 +31,10 @@
     "name": "Custom Banner",
     "settings": [
       {
-        "type": "text",
-        "id": "header_heading",
-        "label": "Header Heading",
-        "default": "TISSO VISON"
+        "type": "image_picker",
+        "id": "header_image",
+        "label": "Header Image",
+  
       },
 // add image in header heading 
       {
