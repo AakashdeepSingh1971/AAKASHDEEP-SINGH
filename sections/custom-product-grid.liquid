@@ -32,7 +32,7 @@
 
   <div class="popup" id="product-popup">
     <div class="popup-content">
-      <span class="close-popup">X</span>
+      <span class="close-popup" onclick="closePopup()">X</span>
       <div>popup</div>
     </div>
 
@@ -87,6 +87,9 @@
     //will add product details here
     popup.style.display = "block"; 
   };
-  closePopup.addEventListener("click", function() { popup.style.display = "none"; });
+  function closePopup() { 
+    //will add product details here
+    popup.style.display = "none"; 
+  };
 
 </script>
