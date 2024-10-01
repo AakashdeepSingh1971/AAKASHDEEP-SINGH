@@ -8,7 +8,6 @@
   display: flex;
   flex-direction: column;
   position: relative;
-
   color: #000;
 }
 .default {
@@ -82,12 +81,12 @@ input:checked + label:before {
   content: "";
   background: #fff;
   color: #000;
-
   border: 1px solid black;
   border-top: 0;
   border-bottom: 0;
   border-right: 0;
 }
+
 .colorHeader {
   font-family: Jost;
   font-size: 14px;
@@ -95,12 +94,12 @@ input:checked + label:before {
   line-height: 18.2px;
   text-align: left;
 }
+
 .secondDiv .color-selector {
   width: 271px;
 }
 .secondDiv .color-button-group {
   display: flex;
-
   height: 40.44px;
   border: 0.5px solid rgba(0, 0, 0, 1);
 }
@@ -128,7 +127,6 @@ input:checked + label:before {
   background-color: black;
   transition: width 0.3s ease;
 }
-
 .secondDiv .color-option.selected::before {
   width: 100%;
 }
@@ -143,7 +141,6 @@ input:checked + label:before {
 .colorDiv {
   border: 2px solid black;
   height: 100%;
-
   width: 5.81px;
   font-family: Jost;
   font-size: 18px;
@@ -151,43 +148,49 @@ input:checked + label:before {
   line-height: 18px;
   letter-spacing: -0.02em;
   text-align: left;
-
   border: 0.5px solid rgba(0, 0, 0, 1);
   gap: 0px;
-
   opacity: 0px;
 }
+
 .colorType {
   flex: 1;
   text-align: center;
 }
+
 .close-popup {
   display: flex;
   justify-content: flex-end;
   cursor: pointer;
 }
+
 .popup p {
   margin: 0;
 }
+
 .popup-content {
   width: 311px;
   height: 447px;
 }
+
 .popupMainDiv {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 .firstDiv {
   gap: 10px;
   height: 140px;
   display: flex;
 }
+
 .popupTextDiv {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 #popup-title {
   font-family: Jost;
   font-size: 16px;
@@ -195,6 +198,7 @@ input:checked + label:before {
   line-height: 19.2px;
   text-align: left;
 }
+
 #popup-price {
   font-family: Lustria;
   font-size: 16px;
@@ -202,6 +206,7 @@ input:checked + label:before {
   line-height: 19.2px;
   text-align: left;
 }
+
 #popup-description > p {
   font-family: Jost;
   font-size: 14px;
@@ -210,18 +215,22 @@ input:checked + label:before {
   letter-spacing: -0.01em;
   text-align: left;
 }
+
 .section2 {
   padding: 51px;
 }
+
 .productGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+
 .gridItem {
   width: 433px;
   height: 444px;
 }
+
 .popup {
   display: none;
   position: fixed;
@@ -231,16 +240,14 @@ input:checked + label:before {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
 .popup-content {
   background-color: #fff;
   margin: 10% auto;
   padding: 20px;
-
   width: 311px;
   height: 447px;
-
   gap: 0;
-
   background: rgba(255, 255, 255, 1);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
@@ -279,6 +286,7 @@ input:checked + label:before {
   border-bottom: 0;
   border-right: 0;
 }
+
 .arrow.open {
   transform: rotate(-135deg); /* Flipped upward arrow */
 }
@@ -311,4 +319,30 @@ input:checked + label:before {
 
 .dropdown-options .dropdown-option:last-child {
   border-bottom: none; /* Remove border from the last item */
+}
+
+/* Responsive design for mobile view */
+@media (max-width: 768px) {
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr); /* 2 grid items on mobile view */
+  }
+
+  .gridItem {
+    width: 100%; /* Make grid items responsive */
+    height: auto;
+  }
+
+  .popup-content {
+    width: 90%;
+    height: auto; /* Adjust the popup size on smaller screens */
+    padding: 15px;
+  }
+
+  .section2 {
+    padding: 20px; /* Reduce padding for smaller screens */
+  }
+
+  .arrow {
+    right: 10px;
+  }
 }
