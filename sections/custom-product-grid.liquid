@@ -277,22 +277,22 @@
      let colors = new Set();
      let sizes = new Set();
 
-     // product.variants.forEach(variant => {
-     //   if (variant.option2) colors.add(variant.option2);
-     //   if (variant.option1) sizes.add(variant.option1);
-     // });
-
-     colors.forEach(color => {
-       const colorBtn = document.createElement('button');
-       colorBtn.classList.add('color-option');
-       colorBtn.textContent = color;
-       colorBtn.setAttribute('data-color', color);
-       colorBtn.onclick = function() {
-         document.querySelectorAll('.color-option').forEach(btn => btn.classList.remove('active'));
-         colorBtn.classList.add('active');
-       };
-       colorOptions.appendChild(colorBtn);
+     product.variants.forEach(variant => {
+       if (variant.option2) colors.add(variant.option2);
+       if (variant.option1) sizes.add(variant.option1);
      });
+
+     // colors.forEach(color => {
+     //   const colorBtn = document.createElement('button');
+     //   colorBtn.classList.add('color-option');
+     //   colorBtn.textContent = color;
+     //   colorBtn.setAttribute('data-color', color);
+     //   colorBtn.onclick = function() {
+     //     document.querySelectorAll('.color-option').forEach(btn => btn.classList.remove('active'));
+     //     colorBtn.classList.add('active');
+     //   };
+     //   colorOptions.appendChild(colorBtn);
+     // });
 
      sizes.forEach(size => {
        const sizeOption = document.createElement('option');
