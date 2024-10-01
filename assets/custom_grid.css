@@ -327,7 +327,7 @@ input:checked + label:before {
 }
 
 @media (max-width: 768px) {
-  .custom-banner > div {
+  .custom-banner .forDesktop {
     display: none;
   }
   .productGrid {
