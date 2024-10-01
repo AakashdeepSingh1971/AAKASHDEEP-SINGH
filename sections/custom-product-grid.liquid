@@ -213,12 +213,13 @@
       return selectDiv;
   }
   function addToCart(){
-    const addToCartButton = document/getElementById("add-to-cart");
+    const addToCartButton = document.getElementById("add-to-cart");
 
     addToButton.addEventListener('click',async function(){
       console.log("clicked addtocart")
     })
   }
+  document.appEventListener('DOMContentLoaded',addToCart)
 </script>
 {% schema %}
   {
