@@ -102,6 +102,7 @@
       'title':"{{ product.title }}",
       'price' : "{{ product.price  }}",
       'description':"{{ product.description }}",
+      'image':{{ product.featured_image | img_url: '300x300' }},
       'variants':[
         {% for variant in product.variants %}
           {
