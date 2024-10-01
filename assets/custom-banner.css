@@ -133,10 +133,50 @@
   transform: translateX(10px);
   color: #000;
 }
-.mainDiv:hover .buttonDiv .customHeaderImage {
-  color: black;
-}
 
 .mainDiv:hover {
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+.custom_header .coloredDiv {
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transition: display 0.6s ease, left 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.custom_header .buttonDiv {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 245, 68, 1);
+  align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  transition: box-shadow 0.6s ease;
+}
+
+.custom_header .buttonDiv a {
+  display: flex;
+  flex: 3;
+  color: #fff;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition: color 0.6s ease, transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.custom_header .mainDiv:hover .buttonDiv a,
+.custom_header .mainDiv:hover .buttonDiv .customHeaderImage {
+  transform: translateX(10px);
+  color: #fff;
+}
+.custom_header .buttonDiv .customHeaderImage {
+  flex: 1;
+  font-size: xx-large;
+  color: #fff;
+
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
