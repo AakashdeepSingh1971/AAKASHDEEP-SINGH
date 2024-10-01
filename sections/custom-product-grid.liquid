@@ -168,7 +168,7 @@
       document.getElementById('popupImg').src = product.image;
     document.getElementById('popup-title').textContent = product.title;
 
-    document.getElementById('popup-price').textContent = product.price|| '';
+    document.getElementById('popup-price').textContent = product.price+"€"|| '';
     document.getElementById('popup-description').textContent = product.description.split("<p>","").split("</p>","") || '';
 
     // const colorOptions = document.getElementById('color-options');
