@@ -94,9 +94,11 @@
 <script>
   const productData = [
     {% for product in products %}{
+       console.log(product)
     'id': "{{ product.id }}",
     'title':"{{ product.title }}",
     'price' : "{{ product.price  }}",
+    'discription':"{{ product.discription }}"
     'variants':[
       {% for variant in product.variants %}
         {
@@ -127,7 +129,7 @@
   function fetchProduct(productId){
     const id = productId;
     console.log(id)
-
+    document.getElementById("popupImg").src=
     popup.style.display = "block";
   }
 </script>
