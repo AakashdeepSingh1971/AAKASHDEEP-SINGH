@@ -314,15 +314,15 @@
          colors.forEach(color => {
       const colorDiv = document.createElement('div');
       colorDiv.classList.add('color-option');
-      colorDiv.setAttribute('data-color', color.name);
+      colorDiv.setAttribute('data-color', color);
 
       const colorCircle = document.createElement('span');
       colorCircle.classList.add('colorDiv');
-      colorCircle.style.backgroundColor = color.hex;
+      colorCircle.style.backgroundColor = color;
 
       const colorName = document.createElement('span');
       colorName.classList.add('colorType');
-      colorName.textContent = color.name;
+      colorName.textContent = color;
 
       colorDiv.appendChild(colorCircle);
       colorDiv.appendChild(colorName);
