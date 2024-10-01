@@ -309,151 +309,156 @@
 </style>
 
 <script>
-           const productData = [
-             {% for product in products %}{
-             'id': "{{ product.id }}",
-             'title':"{{ product.title }}",
-             'price' : "{{ product.price  }}",
-             'description':"{{ product.description }}",
-             'image':"{{ product.featured_image | img_url: '300x300' }}",
-             'variants':[
-               {% for variant in product.variants %}
-                 {
-                   'id':"{{ variant.id }}",
-                   'option1':"{{ variant.option1 }}",
-                   'option2':"{{ variant.option2 }}",
-                   'price':"{{ variant.price }}",
-                 }
-                   {% if forloop.last==false %},{% endif %}
-                   {% endfor %}
-                 ]
-               }
-                   {% if forloop.last==false %},{% endif %}
-                   {% endfor %}
-               ]
-                   console.log(productData)
+// Constants
+const POPUP_SELECTORS = {
+  popup: '#product-popup',
+  image: '#popupImg',
+  title: '#popup-title',
+  price: '#popup-price',
+  description: '#popup-description',
+  colorGroup: '#color-button-group',
+  sizeContainer: '#size'
+};
 
+// Cached DOM elements
+const domElements = {};
 
-           const popup = document.getElementById("product-popup");
+// Event Handlers
+const eventHandlers = {
+  closePopup: () => {
+    domElements.popup.style.display = 'none';
+  },
+  
+  handleColorClick: (event) => {
+    if (!event.target.closest('.color-option')) return;
+    
+    const colorOptions = document.querySelectorAll('.color-option');
+    colorOptions.forEach(option => option.classList.remove('selected'));
+    event.target.closest('.color-option').classList.add('selected');
+  }
+};
 
-           function closePopup() {
-
-             popup.style.display = "none";
-           };
-
-           let currentProduct = null;
-
-          function fetchProduct(productId){
-           console.log(productId)
-             const id = productId.toString();
-          console.log(id)
-             const product = productData.find(item => item.id === id);
-
-             if (product) {
-               console.log(product)
-
-
-             document.getElementById('popupImg').src = product.image;
-           document.getElementById('popup-title').textContent = product.title;
-
-           document.getElementById('popup-price').textContent = product.price+"€"|| '';
-           document.getElementById('popup-description').innerHTML = product.description || '';
-
-           const colorOptions = document.getElementById('color-button-group');
-           const sizeOptions = document.getElementById('size');
-           colorOptions.innerHTML = '';
-           sizeOptions.innerHTML = '';
-
-           let colors = new Set();
-           let sizes = new Set();
-
-           product.variants.forEach(variant => {
-             if (variant.option2) colors.add(variant.option2);
-             if (variant.option1) sizes.add(variant.option1);
-           });
-    console.log(colors)
-           colors.forEach(color => {
-        const colorDiv = document.createElement('div');
-        colorDiv.classList.add('color-option');
-        colorDiv.setAttribute('data-color', color);
-
-        const colorCircle = document.createElement('span');
-        colorCircle.classList.add('colorDiv');
-        colorCircle.style.backgroundColor = color;
-
-        const colorName = document.createElement('span');
-        colorName.classList.add('colorType');
-        colorName.textContent = color;
-
-        colorDiv.appendChild(colorCircle);
-        colorDiv.appendChild(colorName);
-
-        colorDiv.onclick = function() {
-          document.querySelectorAll('.color-option').forEach(btn => btn.classList.remove('selected'));
-          colorDiv.classList.add('selected');
-        };
-
-        colorOptions.appendChild(colorDiv);
-
-        const divider = document.createElement('div');
-        divider.classList.add('divider');
-        colorOptions.appendChild(divider);
-      });
-
+// UI Creators
+const createUI = {
+  colorOption: (color) => {
+    const colorDiv = document.createElement('div');
+    colorDiv.classList.add('color-option');
+    colorDiv.setAttribute('data-color', color);
+    
+    colorDiv.innerHTML = `
+      <span class="colorDiv" style="background-color: ${color}"></span>
+      <span class="colorType">${color}</span>
+    `;
+    
+    return colorDiv;
+  },
+  
+  divider: () => {
+    const divider = document.createElement('div');
+    divider.classList.add('divider');
+    return divider;
+  },
+  
+  sizeOption: (size, isDefault = false) => {
+    const id = isDefault ? 'default-size' : size;
+    return `
+      <input class="selectopt" type="radio" name="size" id="${id}" ${isDefault ? 'checked' : ''}>
+      <label class="option" for="${id}">${isDefault ? 'Choose your size' : size}</label>
+    `;
+  },
+  
+  sizeSelector: (sizes) => {
     const selectDiv = document.createElement('div');
     selectDiv.className = 'select';
     selectDiv.tabIndex = 1;
-    const defaultoption = document.createElement('input');
-    defaultoption.className = 'selectopt';
-    defaultoption.type = 'radio';
-    defaultoption.name = 'test';
+    
+    let options = this.sizeOption(null, true); // Default option
+    sizes.forEach(size => {
+      options += this.sizeOption(size);
+    });
+    
+    selectDiv.innerHTML = options;
+    return selectDiv;
+  }
+};
 
+// Product Handler
+class ProductHandler {
+  constructor(productData) {
+    this.productData = productData;
+    this.init();
+  }
+  
+  init() {
+    // Cache DOM elements
+    Object.keys(POPUP_SELECTORS).forEach(key => {
+      domElements[key] = document.querySelector(POPUP_SELECTORS[key]);
+    });
+    
+    // Add event listeners
+    document.querySelector('.close-popup').addEventListener('click', eventHandlers.closePopup);
+    domElements.colorGroup.addEventListener('click', eventHandlers.handleColorClick);
+  }
+  
+  getProduct(productId) {
+    return this.productData.find(item => item.id === productId.toString());
+  }
+  
+  updatePopup(product) {
+    if (!product) {
+      console.error('Product not found!');
+      return;
+    }
+    
+    // Update basic product info
+    domElements.image.src = product.image;
+    domElements.title.textContent = product.title;
+    domElements.price.textContent = `${product.price}€`;
+    domElements.description.innerHTML = product.description || '';
+    
+    // Extract unique colors and sizes
+    const { colors, sizes } = this.extractOptions(product.variants);
+    
+    // Update color options
+    this.updateColorOptions(colors);
+    
+    // Update size options
+    this.updateSizeOptions(sizes);
+    
+    // Show popup
+    domElements.popup.style.display = 'flex';
+  }
+  
+  extractOptions(variants) {
+    return variants.reduce((acc, variant) => {
+      if (variant.option2) acc.colors.add(variant.option2);
+      if (variant.option1) acc.sizes.add(variant.option1);
+      return acc;
+    }, { colors: new Set(), sizes: new Set() });
+  }
+  
+  updateColorOptions(colors) {
+    domElements.colorGroup.innerHTML = '';
+    colors.forEach(color => {
+      domElements.colorGroup.appendChild(createUI.colorOption(color));
+      domElements.colorGroup.appendChild(createUI.divider());
+    });
+  }
+  
+  updateSizeOptions(sizes) {
+    domElements.sizeContainer.innerHTML = '';
+    domElements.sizeContainer.appendChild(createUI.sizeSelector(Array.from(sizes)));
+  }
+}
 
-      defaultoption.checked = true;
-
-
-    const defaultLabel = document.createElement('label');
-    defaultLabel.htmlFor = size;
-    defaultLabel.className = 'default option';
-    defaultLabel.textContent = 'Choose your size';
-
-    selectDiv.appendChild(defaultoption);
-    selectDiv.appendChild(defaultLabel);
-
-  sizes.forEach((size, index) => {
-    const input = document.createElement('input');
-    input.className = 'selectopt';
-    input.type = 'radio';
-    input.name = 'test';
-    input.id = size;
-
-    const label = document.createElement('label');
-    label.htmlFor = size;
-    label.className = 'option';
-    label.textContent = size;
-
-    selectDiv.appendChild(input);
-    selectDiv.appendChild(label);
-  });
-
-  sizeOptions.appendChild(selectDiv);
-
-           document.getElementById('product-popup').style.display = 'flex';
-                   } else {
-               console.error('Product not found!');
-             }
-         }
-        document.addEventListener('DOMContentLoaded', function() {
-                   const options = document.querySelectorAll('.color-option');
-
-                   options.forEach(option => {
-                       option.addEventListener('click', function() {
-                           options.forEach(opt => opt.classList.remove('selected'));
-                           this.classList.add('selected');
-                       });
-                   });
-               });
-         document.querySelector('.close-popup').addEventListener('click', () => {
-           document.getElementById('product-popup').style.display = 'none';
-         });
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+  const productHandler = new ProductHandler(productData);
+  
+  window.fetchProduct = (productId) => {
+    const product = productHandler.getProduct(productId);
+    productHandler.updatePopup(product);
+  };
+});
+</script>
 </script>
