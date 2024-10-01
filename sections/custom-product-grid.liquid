@@ -233,15 +233,15 @@
 
       addToCartButton.textContent = "Adding..."
       addToCartButton.disabled = true;
-      setTimeOut{()=>{
+      setTimeOut(()=>{
           addToCartButton.textContent = "Added to cart"
       addToCartButton.disabled = true;
-      setTimeOut{()=>{
+      setTimeOut(()=>{
           closePopup
           addToCartButton.textContent = "ADD TO CART"
           addToCartButton.disabled = false;
-      },2000}
-      },2000}
+      },1000)
+      },2000)
 
     })
   }
