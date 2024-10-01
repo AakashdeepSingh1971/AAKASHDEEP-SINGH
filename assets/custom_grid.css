@@ -328,14 +328,19 @@ input:checked + label:before {
 .dropdown-options .dropdown-option:last-child {
   border-bottom: none;
 }
-#add-to-cart {
+.CartButtonDiv {
   width: 271px;
   height: 45px;
-  top: 377px;
-  left: 20px;
-  gap: 0px;
-  opacity: 0px;
+  display: flex;
 }
+.CartButtonDiv button {
+  flex: 3;
+  text-align: center;
+}
+.CartButtonDiv span {
+  flex: 1;
+}
+
 @media (max-width: 768px) {
   .custom-banner .forDesktop {
     display: none;
