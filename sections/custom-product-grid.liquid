@@ -17,7 +17,11 @@
       <div>
         <div>
           {{ product | image_url: width: 120 | image_tag: width: 120 }}
-          <div></div>
+          <div>
+            {{ product.title }}
+            {{ product.price }}
+            <p>This one-piece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.</p>
+          </div>
         </div>
       </div>
     </div>
