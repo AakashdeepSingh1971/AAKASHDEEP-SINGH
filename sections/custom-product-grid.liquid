@@ -237,7 +237,7 @@
           addToCartButton.textContent = "Added to cart"
       addToCartButton.disabled = true;
       setTimeout(()=>{
-          closePopup
+          closePopup()
           addToCartButton.textContent = "ADD TO CART"
           addToCartButton.disabled = false;
       },1000)
