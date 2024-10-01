@@ -167,7 +167,9 @@
   background-color: black;
   transition: display 0.6s ease, left 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-
+.header-mainDiv:hover .header-coloredDiv {
+  left: 0;
+}
 .header-buttonDiv {
   display: flex;
   width: 100%;
