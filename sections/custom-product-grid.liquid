@@ -231,6 +231,17 @@
       selectedVariant["title"]=title
       console.log(selectedVariant)
 
+      addToCartButton.textContent = "Adding..."
+      addToCartButton.disabled = true;
+      setTimeOut{()=>{
+          addToCartButton.textContent = "Added to cart"
+      addToCartButton.disabled = true;
+      setTimeOut{()=>{
+          closePopup
+          addToCartButton.textContent = "ADD TO CART"
+          addToCartButton.disabled = false;
+      },2000}
+      },2000}
 
     })
   }
