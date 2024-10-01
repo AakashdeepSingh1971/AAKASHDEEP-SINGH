@@ -143,6 +143,7 @@
     }
     document.getElementById('popup-image').src = {{ product.featured_image | img_url: '300x300' }};
   document.getElementById('popup-title').textContent = product.title;
+  document.getElementById('popup-text').textContent = product.title;
   document.getElementById('popup-price').textContent = `${parseFloat(product.price).toFixed(2)} $`;
   document.getElementById('popup-description').textContent = product.description || '';
 
