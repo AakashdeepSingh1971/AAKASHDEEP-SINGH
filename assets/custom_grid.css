@@ -332,8 +332,17 @@ input:checked + label:before {
   width: 271px;
   height: 45px;
   display: flex;
+  display: flex;
+
+  background: #000;
+  align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  color: #fff;
+  text-align: center;
 }
-.CartButtonDiv button {
+
+.CartButtonDiv a {
   flex: 3;
   text-align: center;
 }
