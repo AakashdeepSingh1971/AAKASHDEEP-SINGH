@@ -205,7 +205,7 @@
 .header-custom_header .header-buttonDiv .header-customHeaderImage {
   flex: 1;
   font-size: xx-large;
-  color: #fff;
+  color: #000;
 
   transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
