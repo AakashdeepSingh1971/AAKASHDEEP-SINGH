@@ -271,7 +271,7 @@ input:checked + label:before {
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 5px;
-  transform: rotate(45deg); /* Default downward arrow */
+  transform: rotate(45deg);
   transition: transform 0.3s ease;
 }
 
@@ -290,20 +290,20 @@ input:checked + label:before {
 }
 
 .arrow.open {
-  transform: rotate(-135deg); /* Flipped upward arrow */
+  transform: rotate(-135deg);
 }
 
 .dropdown-options {
   width: 100%;
   position: absolute;
-  top: 100%; /* Aligns dropdown below the default option */
+  top: 100%;
   left: 0;
   width: 100%;
   background-color: white;
   border: 1px solid black;
   z-index: 10;
-  max-height: 99px; /* Limit the height */
-  overflow-y: auto; /* Add scrolling if dropdown is too long */
+  max-height: 99px;
+  overflow-y: auto;
 }
 
 .dropdown-option {
@@ -320,28 +320,27 @@ input:checked + label:before {
 }
 
 .dropdown-options .dropdown-option:last-child {
-  border-bottom: none; /* Remove border from the last item */
+  border-bottom: none;
 }
 
-/* Responsive design for mobile view */
 @media (max-width: 768px) {
   .productGrid {
-    grid-template-columns: repeat(2, 1fr); /* 2 grid items on mobile view */
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .gridItem {
-    width: 100%; /* Make grid items responsive */
+    width: 100%;
     height: auto;
   }
 
   .popup-content {
     width: 90%;
-    height: auto; /* Adjust the popup size on smaller screens */
+    height: auto;
     padding: 15px;
   }
 
   .section2 {
-    padding: 20px; /* Reduce padding for smaller screens */
+    padding: 20px;
   }
 
   .arrow {
