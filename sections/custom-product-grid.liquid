@@ -61,6 +61,9 @@
    border:1px solid black;
     color:#000;
   }
+  .default{
+    justify-content: start;
+  }
 
   .option {
     padding:0 30px 0 10px;
@@ -406,7 +409,7 @@
 
     const defaultLabel = document.createElement('label');
     defaultLabel.htmlFor = size;
-    defaultLabel.className = 'option';
+    defaultLabel.className = 'default option';
     defaultLabel.textContent = 'Choose your size';
 
     selectDiv.appendChild(defaultoption);
