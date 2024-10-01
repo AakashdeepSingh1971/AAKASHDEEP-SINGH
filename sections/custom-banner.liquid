@@ -5,14 +5,10 @@
   <div class="mainDiv">
     <div class="coloredDiv"></div>
     <div class="buttonDiv">
-      <a href="{{section.settings.header_button_link}} &#8594;"> </a>
-      <img
-        src="{{'arrow.svg'| asset_url}}"
-        class="customHeaderImage"
-        alt="Arrow icon"
-        height="25%"
-        width="25%"
-      >
+      <a href="{{section.settings.header_button_link}} &#8594;">
+        {{ section.settings.header_button_text }}
+      </a>
+      <p>&#8594;</p>
     </div>
   </div>
 </header>
@@ -32,7 +28,8 @@
       <div class="mainDiv">
         <div class="coloredDiv"></div>
         <div class="buttonDiv">
-          <a href="{{section.settings.button_link}}"> {{ section.settings.button_text }} &#8594;</a>
+          <a href="{{section.settings.button_link}}"> {{ section.settings.button_text }}</a>
+          <p>&#8594;</p>
         </div>
       </div>
     </div>
