@@ -6,7 +6,7 @@
     {% for product in products limit: 6 %}
       <div class="productItem">
         {{ product | image_url: width: 433 | image_tag: width: 433 }}
-        <button onclick="fetchProduct({{ product.id }})">+</button>
+        <button onclick="fetchProduct({{ product }})">+</button>
       </div>
     {% endfor %}
   </div>
@@ -94,6 +94,7 @@
   function fetchProduct(productId){
     const id = productId;
     console.log(id)
+
     popup.style.display = "block";
   }
 </script>
