@@ -401,15 +401,15 @@
     input.className = 'selectopt';
     input.type = 'radio';
     input.name = 'test';
-    input.id = size.id;
+    input.id = size;
     if (size.checked) {
       input.checked = true;
     }
 
     const label = document.createElement('label');
-    label.htmlFor = size.id;
+    label.htmlFor = size;
     label.className = 'option';
-    label.textContent = size.label;
+    label.textContent = size;
 
     selectDiv.appendChild(input);
     selectDiv.appendChild(label);
