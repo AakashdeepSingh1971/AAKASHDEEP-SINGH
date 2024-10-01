@@ -94,7 +94,6 @@
 <script>
   const productData = [
     {% for product in products %}{
-       console.log(product)
     'id': "{{ product.id }}",
     'title':"{{ product.title }}",
     'price' : "{{ product.price  }}",
@@ -104,7 +103,7 @@
         {
           'id':"{{ variant.id }}",
           'option1':"{{ variant.option1 }}",
-          'option2':"{{ variant.oprtion2 }}",
+          'option2':"{{ variant.size }}",
           'price':"{{ variant.price }}"
         }
           {% if forloop.last==false %},{% endif %}
