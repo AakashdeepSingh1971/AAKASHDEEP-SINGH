@@ -39,60 +39,85 @@
   </div>
 </div>
 <style>
-  .popup p{
-    margin:0;
-  }
-  .popupMainDiv{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
+    .popup p{
+      margin:0;
+    }
+    .popupMainDiv{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
 
-  }
-  .firstDiv{
-    display:flex;
-  }
-  .popupTextDiv{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-  }
-  .section2 {
-    padding: 51px;
-  }
-  .productGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .gridItem {
-    width: 433px;
-    height: 444px;
+    }
+    .firstDiv{
+      display:flex;
+    }
+    .popupTextDiv{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    #popup-title{
+      font-family: Jost;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 19.2px;
+  text-align: left;
 
-  }
-  .popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    }
+    #popup-price{
+      font-family: Lustria;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: left;
 
-  }
-  .popup-content {
-    background-color: #fff;
-    margin: 10% auto;
-    padding: 20px;
+    }
+    #popup-description{
+      font-family: Jost;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 15.4px;
+  letter-spacing: -0.01em;
+  text-align: left;
 
-    width: 311px;Ï
-    height: 447px;
+    }
+    .section2 {
+      padding: 51px;
+    }
+    .productGrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .gridItem {
+      width: 433px;
+      height: 444px;
 
-    gap: 0;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
 
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    }
+    .popup-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
 
-  }
+      width: 311px;Ï
+      height: 447px;
+
+      gap: 0;
+
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+
+    }
 </style>
 
 <script>
