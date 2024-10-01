@@ -227,7 +227,7 @@
       const color = selectedColor.getAttribute('data-color');
       const size = selectedSize.textContent;
 
-      const selectedVariant = currentProduct.variant.find(variant => variant.option1===size&& variant.option2 === color);
+      const selectedVariant = currentProduct.variants.find(variant => variant.option1===size&& variant.option2 === color);
       console.log(selectedVariant)
 
 
