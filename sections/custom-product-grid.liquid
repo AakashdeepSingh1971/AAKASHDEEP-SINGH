@@ -88,10 +88,7 @@
 
 
   const popup = document.getElementById("product-popup");
-  function openPopupFunction() {
 
-    popup.style.display = "block";
-  };
   function closePopup() {
 
     popup.style.display = "none";
@@ -102,5 +99,6 @@
   function fetchProduct(productId){
     const id = productId;
     console.log(id)
+    popup.style.display = "block";
   }
 </script>
