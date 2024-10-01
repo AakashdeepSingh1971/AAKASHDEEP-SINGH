@@ -328,8 +328,8 @@
       colorDiv.appendChild(colorName);
 
       colorDiv.onclick = function() {
-        document.querySelectorAll('.color-option').forEach(btn => btn.classList.remove('active'));
-        colorDiv.classList.add('active');
+        document.querySelectorAll('.color-option').forEach(btn => btn.classList.remove('selected'));
+        colorDiv.classList.add('selected');
       };
 
       colorOptions.appendChild(colorDiv);
