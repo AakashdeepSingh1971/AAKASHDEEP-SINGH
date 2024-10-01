@@ -225,6 +225,9 @@ input:checked + label:before {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+.productItem {
+  transition: display 0.6s ease;
+}
 .productItem:hover {
   scale: 1.05;
 }
