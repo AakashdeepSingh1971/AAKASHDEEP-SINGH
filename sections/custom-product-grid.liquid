@@ -63,7 +63,7 @@
     {% for product in products %}{
     'id': "{{ product.id }}",
     'title':"{{ product.title }}",
-    'price' : "{{ product.price  }}"
+    'price' : "{{ product.price  }}",
     'variants':[
       {% for variant in product.variants %}
         {
@@ -74,11 +74,11 @@
         }
           {% if forloop.last==false %},{% endif %}
           {% endfor %}
-    ]
-  }
+        ]
+      }
           {% if forloop.last==false %},{% endif %}
           {% endfor %}
-          ]
+      ]
           console.log(productData)
   const popup = document.getElementById("product-popup");
   function openPopupFunction() {
