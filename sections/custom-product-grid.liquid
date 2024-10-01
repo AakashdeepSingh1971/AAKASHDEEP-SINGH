@@ -26,7 +26,7 @@
           <div class="popupTextDiv">
             <h2 id="popup-title"></h2>
             <p id="popup-price"></p>
-            <p class="popup-description"></p>
+            <p id="popup-description"></p>
           </div>
         </div>
         <div class="secondDiv">
@@ -145,37 +145,37 @@
     document.getElementById('popup-price').textContent = product.price|| '';
     document.getElementById('popup-description').textContent = product.description || '';
 
-    const colorOptions = document.getElementById('color-options');
-    const sizeOptions = document.getElementById('size-options');
-    colorOptions.innerHTML = '';
-    sizeOptions.innerHTML = '';
+    // const colorOptions = document.getElementById('color-options');
+    // const sizeOptions = document.getElementById('size-options');
+    // colorOptions.innerHTML = '';
+    // sizeOptions.innerHTML = '';
 
-    let colors = new Set();
-    let sizes = new Set();
+    // let colors = new Set();
+    // let sizes = new Set();
 
-    product.variants.forEach(variant => {
-      if (variant.option2) colors.add(variant.option2);
-      if (variant.option1) sizes.add(variant.option1);
-    });
+    // product.variants.forEach(variant => {
+    //   if (variant.option2) colors.add(variant.option2);
+    //   if (variant.option1) sizes.add(variant.option1);
+    // });
 
-    colors.forEach(color => {
-      const colorBtn = document.createElement('button');
-      colorBtn.classList.add('color-option');
-      colorBtn.textContent = color;
-      colorBtn.setAttribute('data-color', color);
-      colorBtn.onclick = function() {
-        document.querySelectorAll('.color-option').forEach(btn => btn.classList.remove('active'));
-        colorBtn.classList.add('active');
-      };
-      colorOptions.appendChild(colorBtn);
-    });
+    // colors.forEach(color => {
+    //   const colorBtn = document.createElement('button');
+    //   colorBtn.classList.add('color-option');
+    //   colorBtn.textContent = color;
+    //   colorBtn.setAttribute('data-color', color);
+    //   colorBtn.onclick = function() {
+    //     document.querySelectorAll('.color-option').forEach(btn => btn.classList.remove('active'));
+    //     colorBtn.classList.add('active');
+    //   };
+    //   colorOptions.appendChild(colorBtn);
+    // });
 
-    sizes.forEach(size => {
-      const sizeOption = document.createElement('option');
-      sizeOption.value = size;
-      sizeOption.textContent = size;
-      sizeOptions.appendChild(sizeOption);
-    });
+    // sizes.forEach(size => {
+    //   const sizeOption = document.createElement('option');
+    //   sizeOption.value = size;
+    //   sizeOption.textContent = size;
+    //   sizeOptions.appendChild(sizeOption);
+    // });
 
     document.getElementById('product-popup').style.display = 'flex';
             } else {
