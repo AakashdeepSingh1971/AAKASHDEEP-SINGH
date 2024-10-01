@@ -223,6 +223,10 @@
         alert('Please select both color and size');
         return;
       }
+      const color = selectedColor.getAttribue('data-color');
+      const size = selectedSize.textContent;
+
+      const selectedVariant = currentProduct.variant.find(variant => variant.option1===size&&)
 
 
     })
