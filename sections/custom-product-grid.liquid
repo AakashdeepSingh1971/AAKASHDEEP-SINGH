@@ -313,6 +313,13 @@
 
                       }
 
+  .select {
+      position: relative;
+      width: 200px;
+      border: 1px solid black;
+      cursor: pointer;
+  }
+
   .default-option {
       padding: 10px;
       background-color: #fff;
@@ -342,6 +349,42 @@
       position: absolute;
       top: 100%; /* Aligns dropdown below the default option */
       left
+
+    .default-option {
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid black;
+        text-align: left;
+    }
+
+    .dropdown-options {
+        position: absolute;
+        top: 100%; /* Aligns dropdown below the default option */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        border: 1px solid black;
+        z-index: 10;
+        max-height: 150px; /* Limit the height */
+        overflow-y: auto; /* Add scrolling if dropdown is too long */
+    }
+
+    .dropdown-option {
+        padding: 10px;
+        background-color: #fff;
+        border-bottom: 1px solid black;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .dropdown-option:hover {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .dropdown-options .dropdown-option:last-child {
+        border-bottom: none; /* Remove border from the last item */
+    }
 </style>
 
 <script>
