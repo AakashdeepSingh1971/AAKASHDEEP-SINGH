@@ -264,7 +264,7 @@ input:checked + label:before {
   text-align: left;
   position: relative;
 }
-.popupImg {
+#popupImg {
   object-fit: cover;
 }
 
