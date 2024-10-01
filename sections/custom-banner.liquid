@@ -1,16 +1,21 @@
 <header class="custom_header">
   <h2>{{ section.settings.header_heading }}</h2>
   <p>{{ section.settings.header_subheading }}</p>
-  <div class="buttonDiv">
-    <a href="{{section.settings.header_button_link}}">
-      {{ section.settings.header_button_text }}
-    </a>
-    <img
-      src="{{'arrow.svg'| asset_url}}"
-      class="customHeaderImage"
-      height="25%"
-      width="25%"
-    >
+
+  <div class="mainDiv">
+    <div class="coloredDiv"></div>
+    <div class="buttonDiv">
+      <a href="{{section.settings.header_button_link}}">
+        {{ section.settings.header_button_text }}
+      </a>
+      <img
+        src="{{'arrow.svg'| asset_url}}"
+        class="customHeaderImage"
+        alt="Arrow icon"
+        height="25%"
+        width="25%"
+      >
+    </div>
   </div>
 </header>
 <div class="custom-banner">
@@ -29,7 +34,7 @@
       <div class="mainDiv">
         <div class="coloredDiv"></div>
         <div class="buttonDiv">
-          <a href="{{section.settings.header_button_link}}"> Shop Now </a>
+          <a href="{{section.settings.button_link}}"> {{ section.settings.button_text }} </a>
           <img
             src="{{'arrow.svg'| asset_url}}"
             class="customHeaderImage"
