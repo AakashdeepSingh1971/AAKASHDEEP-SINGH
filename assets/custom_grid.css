@@ -339,6 +339,7 @@ input:checked + label:before {
   padding: 10px 20px;
   box-sizing: border-box;
   color: #fff;
+
   text-align: center;
 }
 
@@ -347,6 +348,7 @@ input:checked + label:before {
   text-align: center;
 }
 .CartButtonDiv span {
+  font-size: xx-large;
   flex: 1;
 }
 
