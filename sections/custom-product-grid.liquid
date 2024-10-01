@@ -228,7 +228,7 @@
       const size = selectedSize.textContent;
       const title = currentProduct.title;
       const selectedVariant = currentProduct.variants.find(variant => variant.option1===size && variant.option2 === color);
-      // selectedVariant.push({"title":title})
+      selectedVariant.["title"]=title)
       console.log(selectedVariant)
 
 
