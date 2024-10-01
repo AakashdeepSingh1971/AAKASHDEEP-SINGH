@@ -216,7 +216,15 @@
     const addToCartButton = document.getElementById("add-to-cart");
 
     addToCartButton.addEventListener('click',async function(){
-      console.log("clicked addtocart")
+
+      const selectedColor = document.querySelected('.color-option.selected');
+      const selectedSize =  document.querySelected('.default-option');
+      if(!selectedColor || selectedSize.textContent === "Choose your size"){
+        alert('Please select both color and size');
+        return;
+      }
+
+      )
     })
   }
   document.addEventListener('DOMContentLoaded',addToCart)
