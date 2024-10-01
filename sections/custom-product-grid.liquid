@@ -226,8 +226,9 @@
       }
       const color = selectedColor.getAttribute('data-color');
       const size = selectedSize.textContent;
-
-      const selectedVariant = currentProduct.variants.find(variant => variant.option1===size&& variant.option2 === color);
+      const title = currentProduct.title;
+      const selectedVariant = currentProduct.variants.find(variant => variant.option1===size && variant.option2 === color);
+      selectedVariant.push("title":title)
       console.log(selectedVariant)
 
 
