@@ -269,18 +269,18 @@
      document.getElementById('popup-price').textContent = product.price+"€"|| '';
      document.getElementById('popup-description').innerHTML = product.description || '';
 
-     const colorOptions = document.getElementById('color-options');
+     // const colorOptions = document.getElementById('color-options');
      const sizeOptions = document.getElementById('size-options');
-     colorOptions.innerHTML = '';
+     // colorOptions.innerHTML = '';
      sizeOptions.innerHTML = '';
 
      let colors = new Set();
      let sizes = new Set();
 
-     product.variants.forEach(variant => {
-       if (variant.option2) colors.add(variant.option2);
-       if (variant.option1) sizes.add(variant.option1);
-     });
+     // product.variants.forEach(variant => {
+     //   if (variant.option2) colors.add(variant.option2);
+     //   if (variant.option1) sizes.add(variant.option1);
+     // });
 
      colors.forEach(color => {
        const colorBtn = document.createElement('button');
