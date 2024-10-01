@@ -396,21 +396,21 @@
   selectDiv.className = 'select';
   selectDiv.tabIndex = 1;
                const defaultoption = document.createElement('input');
-    input.className = 'selectopt';
-    input.type = 'radio';
-    input.name = 'test';
-    input.id = size;
+    defaultoption.className = 'selectopt';
+    defaultoption.type = 'radio';
+    defaultoption.name = 'test';
+    defaultoption.id = size;
 
-      input.checked = true;
+      defaultoption.checked = true;
 
 
-    const label = document.createElement('label');
-    label.htmlFor = size;
-    label.className = 'option';
-    label.textContent = size;
+    const defaultLabel = document.createElement('label');
+    defaultLabel.htmlFor = size;
+    defaultLabel.className = 'option';
+    defaultLabel.textContent = 'Choose your size';
 
-    selectDiv.appendChild(input);
-    selectDiv.appendChild(label);
+    selectDiv.appendChild(defaultoption);
+    selectDiv.appendChild(defaultLabel);
 
   sizes.forEach((size, index) => {
     const input = document.createElement('input');
