@@ -20,9 +20,7 @@
           <div class="popupTextDiv">
             <h2 id="popup-title"></h2>
             <p class="popup-price"></p>
-            <p class="popup-text">
-              This one-piece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.
-            </p>
+            <p class="popup-text"></p>
           </div>
         </div>
         <div class="secondDiv">
@@ -127,8 +125,12 @@
 
   function fetchProduct(productId, image){
     const id = productId;
-    console.log(id)
-    document.getElementById("popupImg").src= image
+    const product = productData.find(item = > item.id ===id);
+    console.log(product)
+    document.getElementById("popupImg").src= image;
+     document.getElementById("popup-title").textContent = product.title
+    document.getElementById("popup-text").textContent = product.description
+   document.getElementById("popup-price").textContent = product.price
     popup.style.display = "block";
   }
 </script>
