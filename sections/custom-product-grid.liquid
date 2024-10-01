@@ -65,6 +65,24 @@
 </style>
 
 <script>
+  const productData = [{% for product in products %}}{
+    'id': "{{ product.id }}",
+    'title':"{{ product.title }}",
+    'price' : "{{ product.price  }}"
+    'variants':[
+      {% for variant in product.variants %}
+        {
+          'id':"{{ variant.id }}",
+          'option1':"{{ variant.option1 }}",
+          'option2':"{{ variant.oprtion2 }}",
+          'price':"{{ variant.price }}"
+        }
+          {% if forloop.last==false %},{% endif %}
+          {% endfor %}
+    ]
+  }{% if forloop.last==false %},{% endif %}
+          {% endfor %}
+          ]
   const popup = document.getElementById("product-popup");
   function openPopupFunction() { 
     //will add product details here
