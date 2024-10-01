@@ -1,26 +1,21 @@
 <div class="section2">
-
-
   <h1>Tisso vison in the wild</h1>
   <div class="productGrid">
-{% assign products = collections.all.products%}
+    {% assign products = collections.all.products %}
 
-
-      {% for product in products limit:6 %}
+    {% for product in products limit: 6 %}
       <div class="productItem">
-        <img src = "{{ product.featured_image| img_url:'300x300' }}" alt="{{ product.title }}" height="100%" width="100%">
+        <img src="{{ product.featured_image| img_url:'300x300' }}" alt="{{ product.title }}" height="100%" width="100%">
         <button>+</button>
       </div>
-           {% endfor %}
-    </div>
-  
+    {% endfor %}
+  </div>
 
   <div class="popup" id="product-popup">
     <div class="popup-content">
       <span class="close-popup" onclick="closePopup()">X</span>
       <div>popup</div>
     </div>
-
   </div>
 </div>
 <style>
@@ -52,7 +47,7 @@
     margin: 10% auto;
     padding: 20px;
 
-    width: 311px;
+    width: 311px;Ï
     height: 447px;
 
     gap: 0;
@@ -61,7 +56,6 @@
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 
   }
-
 </style>
 
 <script>
@@ -83,14 +77,14 @@
   }{% if forloop.last==false %},{% endif %}
           {% endfor %}
           ]
+          console.log(productData)
   const popup = document.getElementById("product-popup");
-  function openPopupFunction() { 
+  function openPopupFunction() {
     //will add product details here
-    popup.style.display = "block"; 
+    popup.style.display = "block";
   };
-  function closePopup() { 
+  function closePopup() {
     //will add product details here
-    popup.style.display = "none"; 
+    popup.style.display = "none";
   };
-
 </script>
