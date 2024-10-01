@@ -59,7 +59,8 @@
 </style>
 
 <script>
-  const productData = [{% for product in products %}}{
+  const productData = [
+    {% for product in products %}{
     'id': "{{ product.id }}",
     'title':"{{ product.title }}",
     'price' : "{{ product.price  }}"
@@ -74,7 +75,8 @@
           {% if forloop.last==false %},{% endif %}
           {% endfor %}
     ]
-  }{% if forloop.last==false %},{% endif %}
+  }
+          {% if forloop.last==false %},{% endif %}
           {% endfor %}
           ]
           console.log(productData)
