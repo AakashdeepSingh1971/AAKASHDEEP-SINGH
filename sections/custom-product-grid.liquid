@@ -4,7 +4,7 @@
   <h1>Tisso vison in the wild</h1>
   <div class="productGrid">
 {% assign products = collections.all.products%}
-    <div class="product-grid">
+
 
       {% for product in products limit:6 %}
       <div class="productItem">
@@ -13,7 +13,7 @@
       </div>
            {% endfor %}
     </div>
-  </div>
+  
 
   <div class="popup" id="product-popup">
     <div class="popup-content">
