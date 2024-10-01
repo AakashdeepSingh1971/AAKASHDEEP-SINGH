@@ -505,10 +505,13 @@
       defaultOption.className = 'default-option';
       defaultOption.textContent = 'Choose your size';
 
+       const arrowDiv = document.createElement('span');
+      arrowDiv.className = 'arrowDiv';
+
       const arrow = document.createElement('span');
       arrow.className = 'arrow';
-      defaultOption.appendChild(arrow);
-
+      arrowDiv.appendChild(arrow);
+      defaultOption.appendChild(arrowDiv);
       selectDiv.appendChild(defaultOption);
 
       const dropdown = document.createElement('div');
