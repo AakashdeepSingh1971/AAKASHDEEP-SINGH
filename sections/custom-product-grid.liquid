@@ -371,8 +371,34 @@
              if (variant.option2) colors.add(variant.option2);
              if (variant.option1) sizes.add(variant.option1);
            });
-    console.log(colors)
 
+           colors.forEach(color => {
+        const colorDiv = document.createElement('div');
+        colorDiv.classList.add('color-option');
+        colorDiv.setAttribute('data-color', color);
+
+        const colorCircle = document.createElement('span');
+        colorCircle.classList.add('colorDiv');
+        colorCircle.style.backgroundColor = color;
+
+        const colorName = document.createElement('span');
+        colorName.classList.add('colorType');
+        colorName.textContent = color;
+
+        colorDiv.appendChild(colorCircle);
+        colorDiv.appendChild(colorName);
+
+        colorDiv.onclick = function() {
+          document.querySelectorAll('.color-option').forEach(btn => btn.classList.remove('selected'));
+          colorDiv.classList.add('selected');
+        };
+
+        colorOptions.appendChild(colorDiv);
+
+        const divider = document.createElement('div');
+        divider.classList.add('divider');
+        colorOptions.appendChild(divider);
+      });
     const sizeDropdown = createSizeDropdown(Array.from(sizes));
     sizeOptions.appendChild(sizeDropdown);
 
