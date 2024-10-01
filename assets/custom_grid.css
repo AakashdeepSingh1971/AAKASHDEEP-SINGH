@@ -188,7 +188,7 @@ input:checked + label:before {
 .popupTextDiv {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 4px;
 }
 
 #popup-title {
