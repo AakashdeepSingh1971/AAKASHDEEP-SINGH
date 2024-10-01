@@ -182,7 +182,7 @@
 .header-buttonDiv a {
   display: flex;
   flex: 3;
-  color: #fff;
+  color: #000;
   text-decoration: none;
   align-items: center;
   justify-content: center;
