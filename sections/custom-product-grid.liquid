@@ -5,12 +5,7 @@
 
     {% for product in products limit: 6 %}
       <div class="productItem">
-        {{
-          product
-          | image_url:
-            sizes: '(min-width:1600px) 960px, (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)'
-        }}
-
+        {{ product | image_url: width: 433 | image_tag: width: 433 }}
         <button onclick="fetchProduct({{ product.id }})">+</button>
       </div>
     {% endfor %}
