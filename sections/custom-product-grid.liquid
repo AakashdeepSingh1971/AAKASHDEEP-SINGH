@@ -14,20 +14,44 @@
   <div class="popup" id="product-popup">
     <div class="popup-content">
       <span class="close-popup" onclick="closePopup()">X</span>
-      <div>
-        <div>
-          {{ product | image_url: width: 120 | image_tag: width: 120 }}
-          <div>
-            {{ product.title }}
-            {{ product.price }}
-            <p>This one-piece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.</p>
+      <div class="popupMainDiv">
+        <div class="firstDiv">
+          <img id="popupImg" src="" alt="Product Image" class="productImage" height="120" width="140">
+          <div class="popupTextDiv">
+            <h2 id="popup-title"></h2>
+            <p class="popup-price"></p>
+            <p class="popup-text">
+              This one-piece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.
+            </p>
           </div>
+        </div>
+        <div class="secondDiv">
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
       </div>
     </div>
   </div>
 </div>
 <style>
+  .popup p{
+    margin:0;
+  }
+  .popupMainDiv{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+
+  }
+  .firstDiv{
+    display:flex;
+  }
+  .popupTextDiv{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
   .section2 {
     padding: 51px;
   }
