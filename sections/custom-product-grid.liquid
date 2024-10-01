@@ -37,38 +37,19 @@
             </div>
           </div>
           <div class="secondDiv">
-            <div id="popup-variants">
-              <div class="color-selector">
-                <label>Color</label>
-                <div id="color-options" class="color-options">
-                  <div class="mainDiv">
-                    <div class="coloredDiv"></div>
-                    <div class="buttonDiv">
-                      <a href="{{section.settings.header_button_link}}"> Shop Now </a>
-                      <img
-                        src="{{'arrow.svg'| asset_url}}"
-                        class="customHeaderImage"
-                        alt="Arrow icon"
-                        height="25%"
-                        width="25%"
-                      >
-                    </div>
-                  </div>
-                  <div class="mainDiv">
-                    <div class="coloredDiv"></div>
-                    <div class="buttonDiv">
-                      <a href="{{section.settings.header_button_link}}"> Shop Now </a>
-                      <img
-                        src="{{'arrow.svg'| asset_url}}"
-                        class="customHeaderImage"
-                        alt="Arrow icon"
-                        height="25%"
-                        width="25%"
-                      >
-                    </div>
-                  </div>
+            <div class="color-selector">
+              <h2>Color</h2>
+              <div class="color-button-group">
+                <div class="color-option" data-color="White">
+                  <span class="colorDiv" style="background-color:#fff;"></span>
+                  <span class="colorType">White</span>
+                </div>
+                <div class="divider"></div>
+                <div class="color-option" data-color="Black">
+                  <span class="colorDiv" style="background-color:#000;"></span> <span class="colorType">Black</span>
                 </div>
               </div>
+
               <div class="size-selector">
                 <label>Size</label>
                 <select id="size-options" class="size-options">
@@ -84,158 +65,139 @@
   </div>
 </div>
 <style>
-
-       .secondDiv .mainDiv {
-            position: relative;
-            width: 220px;
-            height: 50px;
-            overflow: hidden;
-        }
-
-       .secondDiv .coloredDiv {
-            position: absolute;
-            left: -100%;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 245, 68, 1);
-            transition: left 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-       .secondDiv .buttonDiv {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            background: black;
-            align-items: center;
-            padding: 10px 20px;
-            box-sizing: border-box;
-            transition: box-shadow 0.6s ease;
-        }
-
-       .secondDiv .buttonDiv a {
-            display: flex;
-            flex: 3;
-            color: #fff;
-            text-decoration: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 1;
-            transition: color 0.6s ease, transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-       .secondDiv .customHeaderImage {
-            flex: 1;
-            height: 25%;
-            width: 25%;
-            transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-      .secondDiv  .mainDiv:hover .coloredDiv {
-            left: 0;
-        }
-
-       .secondDiv .mainDiv:hover .buttonDiv a,
-      .secondDiv  .mainDiv:hover .buttonDiv .customHeaderImage {
-            transform: translateX(10px);
-        }
-
-        .secondDiv .mainDiv:hover .buttonDiv a {
-            color: #000;
-        }
-
-       .secondDiv .mainDiv:hover {
-            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-        }
-  .close-popup{
-        display: flex;
-    justify-content: flex-end;
+   .secondDiv .buttonDiv {
+     display: inline-flex;
+     align-items: center;
+     padding: 10px 20px;
+     background-color: #3498db;
+     border-radius: 5px;
+     cursor: pointer;
+     transition: background-color 0.6s ease, box-shadow 0.6s ease;
+     overflow: hidden;
+     position: relative;
+     box-shadow: none;
   }
-      .popup p{
-        margin:0;
-      }
-    .popup-content{
-      width: 311px;
-  height: 447px;
 
+  .secondDiv .buttonDiv a {
+     color: #fff;
+     text-decoration: none;
+     font-size: 18px;
+     margin-right: 10px;
+     position: relative;
+     z-index: 1;
+     transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+
+  .secondDiv .customHeaderImage {
+     position: relative;
+     z-index: 1;
+     transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+
+  .secondDiv .buttonDiv:hover {
+     background-color: #2ecc71;
+     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+
+
+  .secondDiv .buttonDiv:hover a {
+     transform: translateX(10px);
+  }
+
+
+  .secondDiv .buttonDiv:hover .customHeaderImage {
+     transform: translateX(10px);
+  }
+    .close-popup{
+          display: flex;
+      justify-content: flex-end;
     }
-      .popupMainDiv{
-        display:flex;
-        flex-direction:column;
-        gap:10px;
+        .popup p{
+          margin:0;
+        }
+      .popup-content{
+        width: 311px;
+    height: 447px;
 
       }
-      .firstDiv{
-        gap:10px;
-        display:flex;
-      }
-      .popupTextDiv{
-        display:flex;
-        flex-direction:column;
-        gap:15px;
-      }
-      #popup-title{
-        font-family: Jost;
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 19.2px;
-    text-align: left;
+        .popupMainDiv{
+          display:flex;
+          flex-direction:column;
+          gap:10px;
 
-      }
-      #popup-price{
-        font-family: Lustria;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 19.2px;
-    text-align: left;
+        }
+        .firstDiv{
+          gap:10px;
+          display:flex;
+        }
+        .popupTextDiv{
+          display:flex;
+          flex-direction:column;
+          gap:15px;
+        }
+        #popup-title{
+          font-family: Jost;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 19.2px;
+      text-align: left;
 
-      }
-      #popup-description>p{
-        font-family: Jost;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 15.4px;
-    letter-spacing: -0.01em;
-    text-align: left;
+        }
+        #popup-price{
+          font-family: Lustria;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 19.2px;
+      text-align: left;
 
-      }
-      .section2 {
-        padding: 51px;
-      }
-      .productGrid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-      }
-      .gridItem {
-        width: 433px;
-        height: 444px;
+        }
+        #popup-description>p{
+          font-family: Jost;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 15.4px;
+      letter-spacing: -0.01em;
+      text-align: left;
 
-      }
-      .popup {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
+        }
+        .section2 {
+          padding: 51px;
+        }
+        .productGrid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+        }
+        .gridItem {
+          width: 433px;
+          height: 444px;
 
-      }
-      .popup-content {
-        background-color: #fff;
-        margin: 10% auto;
-        padding: 20px;
+        }
+        .popup {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
 
-        width: 311px;Ï
-        height: 447px;
+        }
+        .popup-content {
+          background-color: #fff;
+          margin: 10% auto;
+          padding: 20px;
 
-        gap: 0;
+          width: 311px;Ï
+          height: 447px;
 
-        background: rgba(255, 255, 255, 1);
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+          gap: 0;
 
-      }
+          background: rgba(255, 255, 255, 1);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+
+        }
 </style>
 
 <script>
