@@ -3,15 +3,14 @@
   <p>{{ section.settings.header_subheading }}</p>
   <div class="buttonDiv">
     <a href="{{section.settings.header_button_link}}">
-      {{
-        section.settings.header_button_text
-      }}
+      {{ section.settings.header_button_text }}
     </a>
     <img
       src="{{'arrow.svg'| asset_url}}"
       class="customHeaderImage"
       height="25%"
-      width="25%">
+      width="25%"
+    >
   </div>
 </header>
 <div class="custom-banner">
@@ -20,23 +19,25 @@
       src="{{'Frame.svg'| asset_url}}"
       class="customHeaderImage"
       height="100%"
-      width="100%">
+      width="100%"
+    >
   </div>
   <div class="parentDiv">
     <div class="leftside">
       <h1>{{ section.settings.heading }}</h1>
       <p>{{ section.settings.subheading }}</p>
-      <div class="buttonDiv">
-        <a href="{{section.settings.button_link}}">
-          {{
-            section.settings.button_text
-          }}
-        </a>
-        <img
-          src="{{'arrow.svg'| asset_url}}"
-          class="customHeaderImage"
-          height="25%"
-          width="25%">
+      <div class="mainDiv">
+        <div class="coloredDiv"></div>
+        <div class="buttonDiv">
+          <a href="{{section.settings.header_button_link}}"> Shop Now </a>
+          <img
+            src="{{'arrow.svg'| asset_url}}"
+            class="customHeaderImage"
+            alt="Arrow icon"
+            height="25%"
+            width="25%"
+          >
+        </div>
       </div>
     </div>
     <div class="rightside">
@@ -44,76 +45,75 @@
         src="{{'FrameSamll.svg'| asset_url}}"
         class="customHeaderImage"
         height="100%"
-        width="100%"></div>
+        width="100%"
+      >
+    </div>
   </div>
   <div class="custom_footer">
     {{ section.settings.footer_text }}
   </div>
-
 </div>
 
-
 {% schema %}
-  {
-    "name": "Custom Banner",
-    "settings": [
-      {
-        "type": "text",
-        "id": "header_heading",
-        "label": "Header Heading",
-        "default": "TISSO VISON"
-      },
-      {
-        "type": "text",
-        "id": "footer_text",
-        "label": "Footer Text",
-        "default": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
-      },
-      {
-        "type": "text",
-        "id": "header_subheading",
-        "label": "Header Subheading",
-        "default": "Find the ideal gift for your loved ones."
-      },
-      {
-        "type": "text",
-        "id": "header_button_text",
-        "label": "Button Text",
-        "default": "SHOP NOW"
-      }, {
-        "type": "text",
-        "id": "heading",
-        "label": "Heading",
-        "default": "The Gift Guide"
-      }, {
-        "type": "text",
-        "id": "subheading",
-        "label": "subheading",
-        "default": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season."
-      }, {
-        "type": "text",
-        "id": "button_text",
-        "label": "Button Text",
-        "default": "SHOP NOW"
-      }, {
-        "type": "url",
-        "id": "button_link",
-        "label": "Button Link"
-      }, {
-        "type": "url",
-        "id": "header_button_link",
-        "label": "Button Link"
-      }
+{
+  "name": "Custom Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header_heading",
+      "label": "Header Heading",
+      "default": "TISSO VISON"
+    },
+    {
+      "type": "text",
+      "id": "footer_text",
+      "label": "Footer Text",
+      "default": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
+    },
+    {
+      "type": "text",
+      "id": "header_subheading",
+      "label": "Header Subheading",
+      "default": "Find the ideal gift for your loved ones."
+    },
+    {
+      "type": "text",
+      "id": "header_button_text",
+      "label": "Button Text",
+      "default": "SHOP NOW"
+    }, {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The Gift Guide"
+    }, {
+      "type": "text",
+      "id": "subheading",
+      "label": "subheading",
+      "default": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season."
+    }, {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "SHOP NOW"
+    }, {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }, {
+      "type": "url",
+      "id": "header_button_link",
+      "label": "Button Link"
+    }
 
-    ],
-    "presets": [
-      {
-        "name": "Custom Banner",
-        "category": "Custom Sections"
-      }
-    ]
-  }
-
+  ],
+  "presets": [
+    {
+      "name": "Custom Banner",
+      "category": "Custom Sections"
+    }
+  ]
+}
 {% endschema %}
 
 <style>
@@ -194,4 +194,68 @@
   .parentDiv {
     display: flex;
   }
+
+
+        .mainDiv {
+            position: relative;
+            width: 220px;
+            height: 50px;
+            overflow: hidden;
+        }
+
+        .coloredDiv {
+            position: absolute;
+            left: -100%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 245, 68, 1);
+            transition: left 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .buttonDiv {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            background: black;
+            align-items: center;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            transition: box-shadow 0.6s ease;
+        }
+
+        .buttonDiv a {
+            display: flex;
+            flex: 3;
+            color: #fff;
+            text-decoration: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            transition: color 0.6s ease, transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .customHeaderImage {
+            flex: 1;
+            height: 25%;
+            width: 25%;
+            transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .mainDiv:hover .coloredDiv {
+            left: 0;
+        }
+
+        .mainDiv:hover .buttonDiv a,
+        .mainDiv:hover .buttonDiv .customHeaderImage {
+            transform: translateX(10px);
+        }
+
+        .mainDiv:hover .buttonDiv a {
+            color: #000;
+        }
+
+        .mainDiv:hover {
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        }
 </style>
