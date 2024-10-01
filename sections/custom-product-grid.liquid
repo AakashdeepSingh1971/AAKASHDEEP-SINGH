@@ -6,16 +6,13 @@
     {% assign products = collections[section.settings.collection].products %}
 
     {% for product in products limit: 6 %}
-      <div class="productItem">
+      <div
+        class="productItem"
+        onclick="fetchProduct({{ product.id }})"
+        data-product-id="{{ product.id }}"
+      >
         <!-- {{ product.featured_image | image_tag: crop: 'center', scale: 2 }} -->
         <img src=" {{ product.featured_image | image_url }}" height="100%" width="100%">
-        <button
-          class="open-popup"
-          onclick="fetchProduct({{ product.id }})"
-          data-product-id="{{ product.id }}"
-        >
-          +
-        </button>
       </div>
     {% endfor %}
   </div>
@@ -57,7 +54,6 @@
   </div>
 </div>
 <script>
-
                const productData = [
                  {% for product in products %}{
                  'id': "{{ product.id }}",
