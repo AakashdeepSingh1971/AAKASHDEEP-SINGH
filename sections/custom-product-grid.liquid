@@ -140,7 +140,7 @@
         console.log(product)
 
 
-      document.getElementById('popupImg').src = "{{ product.featured_image | img_url: '300x300' }}";
+      document.getElementById('popupImg').src = product.image;
     document.getElementById('popup-title').textContent = product.title;
 
     document.getElementById('popup-price').textContent = product.price|| '';
