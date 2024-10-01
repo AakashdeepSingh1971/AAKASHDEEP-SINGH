@@ -43,20 +43,7 @@
 
               <div class="size-selector">
                 <label>Size</label>
-                <div class="select" tabindex="1">
-                  <input class="selectopt" name="test" type="radio" id="opt0" checked>
-                  <label for="opt0" class="option">Choose your size</label>
-                  <input class="selectopt" name="test" type="radio" id="opt1">
-                  <label for="opt1" class="option">Oranges</label>
-                  <input class="selectopt" name="test" type="radio" id="opt2">
-                  <label for="opt2" class="option">Apples</label>
-                  <input class="selectopt" name="test" type="radio" id="opt3">
-                  <label for="opt3" class="option">Grapefruit</label>
-                  <input class="selectopt" name="test" type="radio" id="opt4">
-                  <label for="opt4" class="option">Bananas</label>
-                  <input class="selectopt" name="test" type="radio" id="opt5">
-                  <label for="opt5" class="option">Watermelon</label>
-                </div>
+                <div id="size"></div>
               </div>
             </div>
           </div>
@@ -67,7 +54,6 @@
   </div>
 </div>
 <style>
-
   .select {
     display:flex;
     flex-direction: column;
@@ -315,120 +301,138 @@
 </style>
 
 <script>
-         const productData = [
-           {% for product in products %}{
-           'id': "{{ product.id }}",
-           'title':"{{ product.title }}",
-           'price' : "{{ product.price  }}",
-           'description':"{{ product.description }}",
-           'image':"{{ product.featured_image | img_url: '300x300' }}",
-           'variants':[
-             {% for variant in product.variants %}
-               {
-                 'id':"{{ variant.id }}",
-                 'option1':"{{ variant.option1 }}",
-                 'option2':"{{ variant.option2 }}",
-                 'price':"{{ variant.price }}",
+           const productData = [
+             {% for product in products %}{
+             'id': "{{ product.id }}",
+             'title':"{{ product.title }}",
+             'price' : "{{ product.price  }}",
+             'description':"{{ product.description }}",
+             'image':"{{ product.featured_image | img_url: '300x300' }}",
+             'variants':[
+               {% for variant in product.variants %}
+                 {
+                   'id':"{{ variant.id }}",
+                   'option1':"{{ variant.option1 }}",
+                   'option2':"{{ variant.option2 }}",
+                   'price':"{{ variant.price }}",
+                 }
+                   {% if forloop.last==false %},{% endif %}
+                   {% endfor %}
+                 ]
                }
-                 {% if forloop.last==false %},{% endif %}
-                 {% endfor %}
+                   {% if forloop.last==false %},{% endif %}
+                   {% endfor %}
                ]
+                   console.log(productData)
+
+
+           const popup = document.getElementById("product-popup");
+
+           function closePopup() {
+
+             popup.style.display = "none";
+           };
+
+           let currentProduct = null;
+
+          function fetchProduct(productId){
+           console.log(productId)
+             const id = productId.toString();
+          console.log(id)
+             const product = productData.find(item => item.id === id);
+
+             if (product) {
+               console.log(product)
+
+
+             document.getElementById('popupImg').src = product.image;
+           document.getElementById('popup-title').textContent = product.title;
+
+           document.getElementById('popup-price').textContent = product.price+"€"|| '';
+           document.getElementById('popup-description').innerHTML = product.description || '';
+
+           const colorOptions = document.getElementById('color-button-group');
+           const sizeOptions = document.getElementById('size');
+           colorOptions.innerHTML = '';
+           sizeOptions.innerHTML = '';
+
+           let colors = new Set();
+           let sizes = new Set();
+
+           product.variants.forEach(variant => {
+             if (variant.option2) colors.add(variant.option2);
+             if (variant.option1) sizes.add(variant.option1);
+           });
+    console.log(colors)
+           colors.forEach(color => {
+        const colorDiv = document.createElement('div');
+        colorDiv.classList.add('color-option');
+        colorDiv.setAttribute('data-color', color);
+
+        const colorCircle = document.createElement('span');
+        colorCircle.classList.add('colorDiv');
+        colorCircle.style.backgroundColor = color;
+
+        const colorName = document.createElement('span');
+        colorName.classList.add('colorType');
+        colorName.textContent = color;
+
+        colorDiv.appendChild(colorCircle);
+        colorDiv.appendChild(colorName);
+
+        colorDiv.onclick = function() {
+          document.querySelectorAll('.color-option').forEach(btn => btn.classList.remove('selected'));
+          colorDiv.classList.add('selected');
+        };
+
+        colorOptions.appendChild(colorDiv);
+
+        const divider = document.createElement('div');
+        divider.classList.add('divider');
+        colorOptions.appendChild(divider);
+      });
+
+          const selectDiv = document.createElement('div');
+  selectDiv.className = 'select';
+  selectDiv.tabIndex = 1;
+
+  sizes.forEach((size, index) => {
+    const input = document.createElement('input');
+    input.className = 'selectopt';
+    input.type = 'radio';
+    input.name = 'test';
+    input.id = size.id;
+    if (size.checked) {
+      input.checked = true;
+    }
+
+    const label = document.createElement('label');
+    label.htmlFor = size.id;
+    label.className = 'option';
+    label.textContent = size.label;
+
+    selectDiv.appendChild(input);
+    selectDiv.appendChild(label);
+  });
+
+  sizeOptions.body.appendChild(selectDiv);
+
+           document.getElementById('product-popup').style.display = 'flex';
+                   } else {
+               console.error('Product not found!');
              }
-                 {% if forloop.last==false %},{% endif %}
-                 {% endfor %}
-             ]
-                 console.log(productData)
+         }
+        document.addEventListener('DOMContentLoaded', function() {
+                   const options = document.querySelectorAll('.color-option');
 
-
-         const popup = document.getElementById("product-popup");
-
-         function closePopup() {
-
-           popup.style.display = "none";
-         };
-
-         let currentProduct = null;
-
-        function fetchProduct(productId){
-         console.log(productId)
-           const id = productId.toString();
-        console.log(id)
-           const product = productData.find(item => item.id === id);
-
-           if (product) {
-             console.log(product)
-
-
-           document.getElementById('popupImg').src = product.image;
-         document.getElementById('popup-title').textContent = product.title;
-
-         document.getElementById('popup-price').textContent = product.price+"€"|| '';
-         document.getElementById('popup-description').innerHTML = product.description || '';
-
-         const colorOptions = document.getElementById('color-button-group');
-         const sizeOptions = document.getElementById('size-options');
-         colorOptions.innerHTML = '';
-         sizeOptions.innerHTML = '';
-
-         let colors = new Set();
-         let sizes = new Set();
-
-         product.variants.forEach(variant => {
-           if (variant.option2) colors.add(variant.option2);
-           if (variant.option1) sizes.add(variant.option1);
+                   options.forEach(option => {
+                       option.addEventListener('click', function() {
+                           options.forEach(opt => opt.classList.remove('selected'));
+                           this.classList.add('selected');
+                       });
+                   });
+               });
+         document.querySelector('.close-popup').addEventListener('click', () => {
+           document.getElementById('product-popup').style.display = 'none';
          });
-  console.log(colors)
-         colors.forEach(color => {
-      const colorDiv = document.createElement('div');
-      colorDiv.classList.add('color-option');
-      colorDiv.setAttribute('data-color', color);
-
-      const colorCircle = document.createElement('span');
-      colorCircle.classList.add('colorDiv');
-      colorCircle.style.backgroundColor = color;
-
-      const colorName = document.createElement('span');
-      colorName.classList.add('colorType');
-      colorName.textContent = color;
-
-      colorDiv.appendChild(colorCircle);
-      colorDiv.appendChild(colorName);
-
-      colorDiv.onclick = function() {
-        document.querySelectorAll('.color-option').forEach(btn => btn.classList.remove('selected'));
-        colorDiv.classList.add('selected');
-      };
-
-      colorOptions.appendChild(colorDiv);
-
-      const divider = document.createElement('div');
-      divider.classList.add('divider');
-      colorOptions.appendChild(divider);
-    });
-
-         sizes.forEach(size => {
-           const sizeOption = document.createElement('option');
-           sizeOption.value = size;
-           sizeOption.textContent = size;
-           sizeOptions.appendChild(sizeOption);
-         });
-
-         document.getElementById('product-popup').style.display = 'flex';
-                 } else {
-             console.error('Product not found!');
-           }
-       }
-      document.addEventListener('DOMContentLoaded', function() {
-                 const options = document.querySelectorAll('.color-option');
-
-                 options.forEach(option => {
-                     option.addEventListener('click', function() {
-                         options.forEach(opt => opt.classList.remove('selected'));
-                         this.classList.add('selected');
-                     });
-                 });
-             });
-       document.querySelector('.close-popup').addEventListener('click', () => {
-         document.getElementById('product-popup').style.display = 'none';
-       });
 </script>
