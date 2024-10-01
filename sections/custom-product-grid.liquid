@@ -96,94 +96,94 @@
 </style>
 
 <script>
-  const productData = [
-    {% for product in products %}{
-    'id': "{{ product.id }}",
-    'title':"{{ product.title }}",
-    'price' : "{{ product.price  }}",
-    'description':"{{ product.description }}",
-    'variants':[
-      {% for variant in product.variants %}
-        {
-          'id':"{{ variant.id }}",
-          'option1':"{{ variant.option1 }}",
-          'option2':"{{ variant.option2 }}",
-          'price':"{{ variant.price }}",
+    const productData = [
+      {% for product in products %}{
+      'id': "{{ product.id }}",
+      'title':"{{ product.title }}",
+      'price' : "{{ product.price  }}",
+      'description':"{{ product.description }}",
+      'variants':[
+        {% for variant in product.variants %}
+          {
+            'id':"{{ variant.id }}",
+            'option1':"{{ variant.option1 }}",
+            'option2':"{{ variant.option2 }}",
+            'price':"{{ variant.price }}",
+          }
+            {% if forloop.last==false %},{% endif %}
+            {% endfor %}
+          ]
         }
-          {% if forloop.last==false %},{% endif %}
-          {% endfor %}
+            {% if forloop.last==false %},{% endif %}
+            {% endfor %}
         ]
-      }
-          {% if forloop.last==false %},{% endif %}
-          {% endfor %}
-      ]
-          console.log(productData)
+            console.log(productData)
 
 
-  const popup = document.getElementById("product-popup");
+    const popup = document.getElementById("product-popup");
 
-  function closePopup() {
+    function closePopup() {
 
-    popup.style.display = "none";
-  };
-
-  let currentProduct = null;
-
- function fetchProduct(productId){
-  console.log(productId)
-    const id = productId.toString();
- console.log(id)
-    const myProduct = productData.find(item => item.id === id);
-
-    if (myProduct) {
-      console.log(myProduct)
-      
-
-    // document.getElementById('popup-image').src = "{{ product.featured_image | img_url: '300x300' }}";
-  document.getElementById('popup-title').textContent = myProduct.title;
-
-  document.getElementById('popup-price').textContent = `${parseFloat(myProduct.price).toFixed(2)} $`;
-  document.getElementById('popup-description').textContent = myProduct.description || '';
-
-  const colorOptions = document.getElementById('color-options');
-  const sizeOptions = document.getElementById('size-options');
-  colorOptions.innerHTML = '';
-  sizeOptions.innerHTML = '';
-
-  let colors = new Set();
-  let sizes = new Set();
-
-  product.variants.forEach(variant => {
-    if (variant.option2) colors.add(variant.option2);
-    if (variant.option1) sizes.add(variant.option1);
-  });
-
-  colors.forEach(color => {
-    const colorBtn = document.createElement('button');
-    colorBtn.classList.add('color-option');
-    colorBtn.textContent = color;
-    colorBtn.setAttribute('data-color', color);
-    colorBtn.onclick = function() {
-      document.querySelectorAll('.color-option').forEach(btn => btn.classList.remove('active'));
-      colorBtn.classList.add('active');
+      popup.style.display = "none";
     };
-    colorOptions.appendChild(colorBtn);
+
+    let currentProduct = null;
+
+   function fetchProduct(productId){
+    console.log(productId)
+      const id = productId.toString();
+   console.log(id)
+      const myProduct = productData.find(item => item.id === id);
+
+      if (product) {
+        console.log(product)
+
+
+      // document.getElementById('popup-image').src = "{{ product.featured_image | img_url: '300x300' }}";
+    document.getElementById('popup-title').textContent = product.title;
+
+    document.getElementById('popup-price').textContent = product.price;
+    document.getElementById('popup-description').textContent = product.description || '';
+
+    const colorOptions = document.getElementById('color-options');
+    const sizeOptions = document.getElementById('size-options');
+    colorOptions.innerHTML = '';
+    sizeOptions.innerHTML = '';
+
+    let colors = new Set();
+    let sizes = new Set();
+
+    product.variants.forEach(variant => {
+      if (variant.option2) colors.add(variant.option2);
+      if (variant.option1) sizes.add(variant.option1);
+    });
+
+    colors.forEach(color => {
+      const colorBtn = document.createElement('button');
+      colorBtn.classList.add('color-option');
+      colorBtn.textContent = color;
+      colorBtn.setAttribute('data-color', color);
+      colorBtn.onclick = function() {
+        document.querySelectorAll('.color-option').forEach(btn => btn.classList.remove('active'));
+        colorBtn.classList.add('active');
+      };
+      colorOptions.appendChild(colorBtn);
+    });
+
+    sizes.forEach(size => {
+      const sizeOption = document.createElement('option');
+      sizeOption.value = size;
+      sizeOption.textContent = size;
+      sizeOptions.appendChild(sizeOption);
+    });
+
+    document.getElementById('product-popup').style.display = 'flex';
+            } else {
+        console.error('Product not found!');
+      }
+  }
+
+  document.querySelector('.close-popup').addEventListener('click', () => {
+    document.getElementById('product-popup').style.display = 'none';
   });
-
-  sizes.forEach(size => {
-    const sizeOption = document.createElement('option');
-    sizeOption.value = size;
-    sizeOption.textContent = size;
-    sizeOptions.appendChild(sizeOption);
-  });
-
-  document.getElementById('product-popup').style.display = 'flex';
-          } else {
-      console.error('Product not found!');
-    }
-}
-
-document.querySelector('.close-popup').addEventListener('click', () => {
-  document.getElementById('product-popup').style.display = 'none';
-});
 </script>
