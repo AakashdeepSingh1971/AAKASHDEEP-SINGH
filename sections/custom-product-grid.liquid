@@ -5,7 +5,7 @@
 
     {% for product in products limit: 6 %}
       <div class="productItem">
-        {{ product | image_url: width: 400 | image_tag: width: null }}
+        {{ product | image_url: width: 433 | image_tag: width: 433 }}
         <button onclick="fetchProduct({{ product.id }})">+</button>
       </div>
     {% endfor %}
