@@ -133,7 +133,7 @@
     console.log(productId)
       const id = productId.toString();
    console.log(id)
-      const myProduct = productData.find(item => item.id === id);
+      const product = productData.find(item => item.id === id);
 
       if (product) {
         console.log(product)
@@ -142,7 +142,7 @@
       // document.getElementById('popup-image').src = "{{ product.featured_image | img_url: '300x300' }}";
     document.getElementById('popup-title').textContent = product.title;
 
-    document.getElementById('popup-price').textContent = product.price;
+    document.getElementById('popup-price').textContent = product.price|| '';
     document.getElementById('popup-description').textContent = product.description || '';
 
     const colorOptions = document.getElementById('color-options');
