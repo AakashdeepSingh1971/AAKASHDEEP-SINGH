@@ -137,10 +137,8 @@
 
     if (product) {
       console.log(product)
-      displayProductPopup(product,imagePath);
-    } else {
-      console.error('Product not found!');
-    }
+      
+
     document.getElementById('popup-image').src = {{ product.featured_image | img_url: '300x300' }};
   document.getElementById('popup-title').textContent = product.title;
 
@@ -180,6 +178,9 @@
   });
 
   document.getElementById('product-popup').style.display = 'flex';
+          } else {
+      console.error('Product not found!');
+    }
 }
 
 document.querySelector('.close-popup').addEventListener('click', () => {
