@@ -169,7 +169,7 @@
     document.getElementById('popup-title').textContent = product.title;
 
     document.getElementById('popup-price').textContent = product.price+"€"|| '';
-    document.getElementById('popup-description').textContent = product.description.split("<p>","").split("</p>","") || '';
+    document.getElementById('popup-description').textContent = product.description || '';
 
     // const colorOptions = document.getElementById('color-options');
     // const sizeOptions = document.getElementById('size-options');
