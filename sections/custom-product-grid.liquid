@@ -217,8 +217,8 @@
 
     addToCartButton.addEventListener('click',async function(){
 
-      const selectedColor = document.querySelected('.color-option.selected');
-      const selectedSize =  document.querySelected('.default-option');
+      const selectedColor = document.querySelector('.color-option.selected');
+      const selectedSize =  document.querySelector('.default-option');
       if(!selectedColor || selectedSize.textContent === "Choose your size"){
         alert('Please select both color and size');
         return;
