@@ -195,18 +195,18 @@
           optionDiv.className = 'dropdown-option';
           optionDiv.textContent = size;
           optionDiv.onclick = () => {
-              defaultOption.textContent = size; // Set the selected size as the default text
-              dropdown.style.display = 'none'; // Hide the dropdown after selection
-              arrow.classList.remove('open'); // Reset arrow direction
+              defaultOption.textContent = size;
+              dropdown.style.display = 'none';
+              arrow.classList.remove('open');
           };
           dropdown.appendChild(optionDiv);
       });
 
-      // Toggle dropdown visibility and arrow flipping on click
+
       defaultOption.onclick = () => {
           const isVisible = dropdown.style.display === 'block';
           dropdown.style.display = isVisible ? 'none' : 'block';
-          arrow.classList.toggle('open'); // Toggle arrow direction
+          arrow.classList.toggle('open');
       };
 
       selectDiv.appendChild(dropdown);
