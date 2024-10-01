@@ -2,7 +2,7 @@
 <div class="section2">
   <h1>Tisso vison in the wild</h1>
   <div class="productGrid">
-    {% assign products = collections.all.products %}
+    {% assign products = collections[section.settings.collection].products %}
 
     {% for product in products limit: 6 %}
       <div class="productItem">
@@ -214,3 +214,15 @@
       return selectDiv;
   }
 </script>
+{% schema %}
+  {
+  "name": "Product Grid Section",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Choose a Collection"
+    }
+  ]
+}
+{% endschema %}
