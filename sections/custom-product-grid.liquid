@@ -54,6 +54,7 @@
   </div>
 </div>
 <script>
+   var currentProduct = null;
                const productData = [
                  {% for product in products %}{
                  'id': "{{ product.id }}",
@@ -87,14 +88,14 @@
                  popup.style.display = "none";
                };
 
-               var currentProduct = null;
+
 
               function fetchProduct(productId){
                console.log(productId)
                  const id = productId.toString();
               console.log(id)
                  const product = productData.find(item => item.id === id);
-
+                currentProduct = product
                  if (product) {
                    console.log(product)
 
