@@ -196,7 +196,12 @@
   transform: translateX(10px);
   color: #fff;
 }
-
+.header-mainDiv {
+  position: relative;
+  width: 220px;
+  height: 50px;
+  overflow: hidden;
+}
 .header-buttonDiv .header-customHeaderImage {
   flex: 1;
   font-size: xx-large;
