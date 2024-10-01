@@ -306,6 +306,102 @@
                   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 
                 }
+    .select {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    border: 1px solid black;
+  }
+
+  .option {
+    padding: 0 30px 0 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+  }
+
+  .select:focus {
+    height: auto;
+    z-index: 3;
+  }
+
+  .select:focus .option {
+    position: relative;
+  }
+
+  .select .option:not(:first-child) {
+    display: none;
+  }
+
+  .select:focus .option {
+    display: flex;
+  }
+
+  input {
+    display: none;
+  }
+
+  input:checked + label {
+    order: -1;
+  }
+
+  input:checked + label:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #000000;
+    position: absolute;
+    right: 15px;
+    top: calc(50% - 2.5px);
+  }
+
+  .popup-content {
+    display: flex;
+    flex-direction: column;
+    height: 447px;
+    padding: 20px;
+    background: white;
+    position: relative;
+  }
+
+  .popupMainDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+  }
+
+  .secondDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .color-selector, .size-selector {
+    width: 100%;
+  }
+
+  .color-button-group {
+    display: flex;
+    height: 40px;
+    border: 0.5px solid rgba(0, 0, 0, 1);
+  }
+
+  /* Rest of your existing styles */
+
+  .add-to-cart-button {
+    margin-top: auto;
+    height: 40px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
 </style>
 
 <script>
