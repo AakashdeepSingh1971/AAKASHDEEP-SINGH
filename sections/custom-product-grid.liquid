@@ -48,7 +48,7 @@
             </div>
           </div>
         </div>
-        <div class="CartButtonDiv">
+        <div class="CartButtonDiv" id="CartButtonDiv">
           <a id="add-to-cart" class="add-to-cart-button">ADD TO CART</a>
           <span class="">&#8594;</span>
         </div>
@@ -217,7 +217,7 @@
       return selectDiv;
   }
   function addToCart(){
-    const addToCartButton = document.getElementById("add-to-cart");
+    const addToCartButton = document.getElementById("CartButtonDiv");
 
     addToCartButton.addEventListener('click',async function(){
 
