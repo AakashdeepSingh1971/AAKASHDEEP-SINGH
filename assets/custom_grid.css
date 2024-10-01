@@ -264,6 +264,9 @@ input:checked + label:before {
   text-align: left;
   position: relative;
 }
+.popupImg {
+  object-fit: cover;
+}
 
 .arrow {
   position: absolute;
