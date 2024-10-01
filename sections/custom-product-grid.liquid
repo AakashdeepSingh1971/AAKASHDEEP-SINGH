@@ -130,13 +130,60 @@
   let currentProduct = null;
 
   function fetchProduct(productId, image){
-    const id = productId;
-    const product = productData.find(item = > item.id ===id);
-    console.log(product)
-    document.getElementById("popupImg").src= image;
-    document.getElementById("popup-title").textContent =""= product.title
-    document.getElementById("popup-text").textContent =""= product.description
-    document.getElementById("popup-price").textContent =""= product.price
-    popup.style.display = "block";
+  console.log(productId)
+    const id = productId.toString();
+ console.log(id)
+    const product = productsData.find(item => item.id === id);
+
+    if (product) {
+      console.log(product)
+      displayProductPopup(product,imagePath);
+    } else {
+      console.error('Product not found!');
+    }
+    document.getElementById('popup-image').src = path;
+  document.getElementById('popup-title').textContent = product.title;
+  document.getElementById('popup-price').textContent = `${parseFloat(product.price).toFixed(2)} €`;
+  document.getElementById('popup-description').textContent = product.description || '';
+
+  const colorOptions = document.getElementById('color-options');
+  const sizeOptions = document.getElementById('size-options');
+  colorOptions.innerHTML = '';
+  sizeOptions.innerHTML = '';
+
+  let colors = new Set();
+  let sizes = new Set();
+
+  product.variants.forEach(variant => {
+    if (variant.option2) colors.add(variant.option2);
+    if (variant.option1) sizes.add(variant.option1);
+  });
+
+  colors.forEach(color => {
+    const colorBtn = document.createElement('button');
+    colorBtn.classList.add('color-option');
+    colorBtn.textContent = color;
+    colorBtn.setAttribute('data-color', color);
+    colorBtn.onclick = function() {
+      document.querySelectorAll('.color-option').forEach(btn => btn.classList.remove('active'));
+      colorBtn.classList.add('active');
+    };
+    colorOptions.appendChild(colorBtn);
+  });
+
+  sizes.forEach(size => {
+    const sizeOption = document.createElement('option');
+    sizeOption.value = size;
+    sizeOption.textContent = size;
+    sizeOptions.appendChild(sizeOption);
+  });
+
+  document.getElementById('product-popup').style.display = 'flex';
+}
+
+document.querySelector('.close-popup').addEventListener('click', () => {
+  document.getElementById('product-popup').style.display = 'none';
+});
+
   }
 </script>
