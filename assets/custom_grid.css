@@ -342,7 +342,9 @@ input:checked + label:before {
 
   text-align: center;
 }
-
+.CartButtonDiv:disabled span {
+  cursor: not-allowed;
+}
 .CartButtonDiv a {
   flex: 3;
   text-align: center;
