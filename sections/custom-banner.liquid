@@ -1,7 +1,14 @@
 {{ 'custom-banner.css' | asset_url | stylesheet_tag }}
 <header class="custom_header">
   <img
-    src="{{'Frame.svg'| asset_url}}"
+    src="{{'cross.svg'| asset_url}}"
+    class="customHeaderImage"
+    id="mobile"
+    height="100%"
+    width="100%"
+  >
+  <img
+    src="{{'hamburger-icon.svg'| asset_url}}"
     class="customHeaderImage"
     id="mobile"
     height="100%"
