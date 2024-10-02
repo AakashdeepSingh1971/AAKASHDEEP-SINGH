@@ -1,19 +1,7 @@
 {{ 'custom-banner.css' | asset_url | stylesheet_tag }}
 <header class="custom_header">
   <div>+</div>
-  <div class="mobile_drower">
-    <p id="">{{ section.settings.header_subheading }}</p>
-    <div class="header-mainDiv" id="">
-      <div class="header-coloredDiv"></div>
-      <div class="header-buttonDiv">
-        <a href="{{section.settings.header_button_link}}">
-          {{ section.settings.header_button_text }}
-        </a>
 
-        <span class="header-customHeaderImage">&#8594;</span>
-      </div>
-    </div>
-  </div>
   <h2>{{ section.settings.header_heading }}</h2>
   <p id="desktop">{{ section.settings.header_subheading }}</p>
 
@@ -29,6 +17,19 @@
   </div>
 </header>
 <div class="custom-banner">
+  <div class="mobile_drower">
+    <p id="">{{ section.settings.header_subheading }}</p>
+    <div class="header-mainDiv" id="">
+      <div class="header-coloredDiv"></div>
+      <div class="header-buttonDiv">
+        <a href="{{section.settings.header_button_link}}">
+          {{ section.settings.header_button_text }}
+        </a>
+
+        <span class="header-customHeaderImage">&#8594;</span>
+      </div>
+    </div>
+  </div>
   <div class="forDesktop">
     <img
       src="{{'Frame.svg'| asset_url}}"
