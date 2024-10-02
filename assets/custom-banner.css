@@ -277,7 +277,7 @@
 .mobile_drower.open {
   top: 0;
   opacity: 1;
-  height: auto;
+  height: 124px;
   /* animation: animatetop 1s forwards; */
 }
 
