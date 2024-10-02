@@ -259,7 +259,8 @@
   text-align: center;
 }
 .custom_banner,
-.parentDiv {
+.parentDiv,
+#MainContent {
   transition: all 0.6s ease;
 }
 .mobile_drower {
