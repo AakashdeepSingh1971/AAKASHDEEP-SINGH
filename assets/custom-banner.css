@@ -269,7 +269,6 @@ body,
   text-align: center;
 }
 .mobile_drower.open {
-  display: flex;
   animation: animatetop 15s forwards;
 }
 
