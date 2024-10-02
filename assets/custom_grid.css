@@ -358,6 +358,13 @@ input:checked + label:before {
   .custom-banner .forDesktop {
     display: none;
   }
+  .leftside p {
+    font-family: Jost;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20.8px;
+    text-align: center;
+  }
   .productGrid {
     grid-template-columns: repeat(2, 1fr);
   }
