@@ -236,6 +236,9 @@
 #desktop {
   display: block;
 }
+.cross {
+  display: none;
+}
 .mobile_drower {
   display: flex;
   flex-direction: column;
