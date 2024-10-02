@@ -282,7 +282,8 @@
   height: auto;
   /* animation: animatetop 1s forwards; */
 }
-
+.drawer-open.custom-banner {
+}
 .mobile_drower.closing {
   top: -300px;
   opacity: 0;
