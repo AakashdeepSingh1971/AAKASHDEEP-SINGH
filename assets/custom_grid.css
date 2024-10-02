@@ -370,6 +370,10 @@ input:checked + label:before {
   .custom_footer {
     padding: 10px;
   }
+  .mainDiv#mobile {
+    position: absolute;
+    bottom: 115px;
+  }
   /* .rightside img {
     width: 686px;
     height: 264px;
