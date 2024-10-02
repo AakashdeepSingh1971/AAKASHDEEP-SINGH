@@ -374,7 +374,7 @@ input:checked + label:before {
   }
   .mainDiv#mobile {
     position: RELATIVE;
-    bottom: 115px;
+    bottom: 108px;
   }
   /* .rightside img {
     width: 686px;
