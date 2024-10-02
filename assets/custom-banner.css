@@ -282,7 +282,9 @@
   height: auto;
   /* animation: animatetop 1s forwards; */
 }
+
 .drawer-open.custom-banner {
+  margin-top: 130px;
 }
 .mobile_drower.closing {
   top: -300px;
