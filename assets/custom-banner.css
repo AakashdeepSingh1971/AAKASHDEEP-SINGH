@@ -300,6 +300,18 @@
     opacity: 1;
   }
 }
+@keyframes animatebottom {
+  0% {
+    top: 0;
+    height: 124px;
+    opacity: 1;
+  }
+  100% {
+    top: -150px;
+    height: 0;
+    opacity: 0;
+  }
+}
 
 .mobile_drower .header-mainDiv {
   margin-bottom: 25px;
