@@ -1,5 +1,5 @@
-* {
-  transition: transform 0.6s;
+body {
+  transition: all transform 0.6s;
 }
 .custom_header {
   display: flex;
