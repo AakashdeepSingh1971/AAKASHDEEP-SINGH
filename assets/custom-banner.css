@@ -258,7 +258,8 @@
   line-height: 13.42px;
   text-align: center;
 }
-.custom_banner {
+.custom_banner,
+.parentDiv {
   transition: all 0.6s ease;
 }
 .mobile_drower {
