@@ -8,6 +8,7 @@ body {
   justify-content: space-between;
   padding: 10px 50px;
   height: 64px;
+  z-index: 1;
 }
 .custom_footer {
   display: flex;
