@@ -276,6 +276,7 @@
 }
 .mobile_drower.open {
   animation: animatetop 1s forwards;
+  display: flex;
 }
 
 .mobile_drower.closing {
