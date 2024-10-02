@@ -243,6 +243,8 @@ body {
   align-items: center;
   background: rgba(242, 242, 242, 1);
   gap: 16px;
+  position: relative;
+  animation: animatetop 0.4s;
 }
 .mobile_drower p {
   font-family: Jost;
@@ -250,8 +252,6 @@ body {
   font-weight: 400;
   line-height: 13.42px;
   text-align: center;
-  position: relative;
-  animation: animatetop 0.4s;
 }
 @keyframe animatetop {
   0% {
