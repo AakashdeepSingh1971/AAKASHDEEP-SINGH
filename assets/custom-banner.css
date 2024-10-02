@@ -256,13 +256,7 @@ body {
 
   z-index: 1;
 }
-.custom_header {
-  transition: transform 0.4s ease-in-out;
-}
 
-.drawer-open .custom_header {
-  height: 140px;
-}
 .mobile_drower p {
   font-family: Jost;
   font-size: 16px;
