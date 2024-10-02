@@ -243,6 +243,13 @@ body {
   background: rgba(242, 242, 242, 1);
   gap: 16px;
 }
+.mobile_drower p {
+  font-family: Jost;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 13.42px;
+  text-align: center;
+}
 .mobile_drower .header-mainDiv {
   margin-bottom: 25px;
 }
