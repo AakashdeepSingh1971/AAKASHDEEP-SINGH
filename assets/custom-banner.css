@@ -10,7 +10,19 @@
   transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   border-radius: 2px;
 }
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
 
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
 .menu-button::before {
   content: "";
   margin-top: -8px;
