@@ -372,6 +372,9 @@ input:checked + label:before {
   .leftside {
     padding: 10px;
   }
+  .headingForGrid {
+    text-align: center;
+  }
   .productGrid {
     grid-template-columns: repeat(2, 1fr);
   }
