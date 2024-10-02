@@ -110,12 +110,12 @@
       drawer.classList.remove('open');
       body.classList.remove('drawer-open');
 
-
+      setTimeout(() => {
         drawer.classList.remove('closing');
 
         ham.style.display = 'block';
         cross.style.display = 'none';
-
+      }, 1200);
     } else {
 
       drawer.classList.add('open');
