@@ -261,7 +261,7 @@
 .custom_banner,
 .parentDiv,
 #MainContent {
-  transition: all 0.6s ease;
+  transition: all ease;
 }
 .mobile_drower {
   flex-direction: column;
