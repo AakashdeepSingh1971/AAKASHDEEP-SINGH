@@ -99,10 +99,14 @@
     console.log("opend")
     const ham = document.querySelector('.customHeaderImage.hamburger-icon')
     const cross = document.querySelector('.customHeaderImage.cross')
+    const drower = document.querySelector('.mobile_drower')
     if( ham.style.display ==="none"){
        ham.style.display = "block"
        cross.style.display = "none"
+       drower.style.display = "none"
+
     }else{
+        drower.style.display = "block"
         ham.style.display = "none"
         cross.style.display = "block"
     }
