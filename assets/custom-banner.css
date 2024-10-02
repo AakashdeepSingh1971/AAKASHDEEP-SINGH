@@ -270,11 +270,11 @@ body,
 }
 .mobile_drower.open {
   display: flex;
-  animation: animatetop 0.4s forwards;
+  animation: animatetop 60s forwards;
 }
 
 .mobile_drower.closing {
-  animation: animatebottom 0.4s forwards;
+  animation: animatebottom 60s forwards;
 }
 @keyframes animatetop {
   0% {
