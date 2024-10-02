@@ -1,7 +1,10 @@
 {{ 'custom-banner.css' | asset_url | stylesheet_tag }}
 <header class="custom_header">
   <div class="menu-button"></div>
-
+  <input id="menu-toggle" type="checkbox">
+  <label class="menu-button-container" for="menu-toggle">
+    <div class="menu-button"></div>
+  </label>
   <h2>{{ section.settings.header_heading }}</h2>
   <p id="desktop">{{ section.settings.header_subheading }}</p>
 
