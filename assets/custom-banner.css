@@ -256,6 +256,13 @@ body {
 
   z-index: 1;
 }
+.custom-banner {
+  transition: transform 0.4s ease-in-out;
+}
+
+.drawer-open .custom-banner {
+  transform: translateY(300px);
+}
 .mobile_drower p {
   font-family: Jost;
   font-size: 16px;
