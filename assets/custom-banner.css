@@ -257,6 +257,9 @@ body {
   z-index: 1;
 }
 
+.drawer-open .custom_header {
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
 .mobile_drower p {
   font-family: Jost;
   font-size: 16px;
