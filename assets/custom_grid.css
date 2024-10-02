@@ -366,6 +366,9 @@ input:checked + label:before {
     line-height: 20.8px;
     text-align: center;
   }
+  .parentDiv {
+    flex-direction: column;
+  }
   .leftside {
     padding: 10px;
   }
