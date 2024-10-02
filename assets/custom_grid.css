@@ -364,6 +364,9 @@ input:checked + label:before {
   .custom-banner .forDesktop {
     display: none;
   }
+  .rightside {
+    overflow: hidden;
+  }
   .rightside img {
     width: 686px;
     height: 264px;
