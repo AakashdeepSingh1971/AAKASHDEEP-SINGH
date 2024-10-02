@@ -286,6 +286,7 @@ body {
   .custom_header {
     justify-content: center;
     padding: 16px;
+    position: relative;
   }
 
   .custom_header h2 {
