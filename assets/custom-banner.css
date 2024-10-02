@@ -275,27 +275,27 @@
   z-index: 1;
 }
 .mobile_drower.open {
-  top: 0;
+  /* top: 0;
   opacity: 1;
-  height: 124px;
-  /* animation: animatetop 1s forwards; */
+  height: 124px; */
+  animation: animatetop 1s forwards;
 }
 
 .mobile_drower.closing {
-  top: -150px;
+  /* top: -150px;
   opacity: 0;
-  height: 0;
-  /* animation: animatebottom 1s forwards; */
+  height: 0; */
+  animation: animatebottom 1s forwards;
 }
 @keyframes animatetop {
   0% {
-    top: -300px;
+    top: -150px;
     height: 0;
     opacity: 0;
   }
   100% {
     top: 0;
-    height: auto;
+    height: 124px;
     opacity: 1;
   }
 }
