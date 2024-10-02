@@ -268,7 +268,8 @@
   align-items: center;
   background: rgba(242, 242, 242, 1);
   gap: 16px;
-
+  display: flex;
+  top: -300px;
   position: relative;
   height: 0;
   transition: top 0.5s ease, opacity 0.5s ease;
