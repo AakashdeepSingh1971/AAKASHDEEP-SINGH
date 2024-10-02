@@ -286,7 +286,7 @@
   /* top: -150px;
   opacity: 0;
   height: 0; */
-  animation: animatebottom 1s forwards;
+  animation: animatebottom 2s forwards;
 }
 @keyframes animatetop {
   0% {
