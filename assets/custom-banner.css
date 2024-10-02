@@ -271,19 +271,21 @@
   display: flex;
   top: -300px;
   position: relative;
-
-  transition: top 0.5s ease, opacity 0.5s ease;
+  height: 0;
+  transition: top 0.5s ease, opacity 0.5s ease, height 0.5s ease;
   z-index: 1;
 }
 .mobile_drower.open {
   top: 0;
   opacity: 1;
+  height: auto;
   /* animation: animatetop 1s forwards; */
 }
 
 .mobile_drower.closing {
   top: -300px;
   opacity: 0;
+  height: 0;
   /* animation: animatebottom 1s forwards; */
 }
 @keyframes animatetop {
