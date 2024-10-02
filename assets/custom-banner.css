@@ -229,7 +229,8 @@
 
   transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-#mobile {
+#mobile,
+.cross {
   display: none;
 }
 #desktop {
