@@ -254,7 +254,7 @@ body,
   background: rgba(242, 242, 242, 1);
   gap: 16px;
   position: relative;
-
+  display: flex;
   z-index: 1;
 }
 
@@ -278,11 +278,10 @@ body,
 @keyframes animatetop {
   0% {
     top: -300px;
-    display: none;
+
     opacity: 0;
   }
   100% {
-    display: flex;
     top: 0;
     opacity: 1;
   }
