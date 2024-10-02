@@ -256,11 +256,11 @@ body {
 
   z-index: 1;
 }
-.custom_header {
+.custom-banner {
   transition: transform 0.4s ease-in-out;
 }
 
-.drawer-open .custom_header {
+.drawer-open .custom-banner {
   transform: translateY(300px);
 }
 .mobile_drower p {
