@@ -431,6 +431,9 @@ input:checked + label:before {
 
   .popup-content {
     width: 90%;
+
+    justify-content: center;
+    align-items: center;
     padding: 15px;
   }
 
