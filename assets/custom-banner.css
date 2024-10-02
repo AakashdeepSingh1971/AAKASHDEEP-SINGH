@@ -1,6 +1,6 @@
 *,
 .custom-banner {
-  transition: all ease;
+  transition: all ease-in-out;
 }
 .custom_header {
   display: flex;
@@ -260,7 +260,7 @@
 .custom_banner,
 .parentDiv,
 #MainContent {
-  transition: all 0.5s ease;
+  transition: all 0.5s ease-in-out;
 }
 .mobile_drower {
   flex-direction: column;
@@ -272,7 +272,7 @@
   top: -150px;
   position: relative;
   height: 0;
-  transition: all 0.5s ease;
+  transition: all 0.5s ease-in-out;
   z-index: 1;
 }
 .mobile_drower.open {
