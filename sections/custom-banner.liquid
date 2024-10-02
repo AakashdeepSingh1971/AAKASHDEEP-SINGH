@@ -104,8 +104,10 @@
        ham.style.display = "block"
        cross.style.display = "none"
        drower.style.display = "none"
+       drower.classList.remove('open');
 
     }else{
+        drower.classList.add('open');
         drower.style.display = "flex"
         ham.style.display = "none"
         cross.style.display = "block"
