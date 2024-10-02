@@ -95,23 +95,28 @@
   </div>
 </div>
 <script>
-   function openMenu() {
+  function openMenu() {
     const ham = document.querySelector('.customHeaderImage.hamburger-icon');
     const cross = document.querySelector('.customHeaderImage.cross');
     const drawer = document.querySelector('.mobile_drower');
+    const banner = document.querySelector('.custom-banner');
+    const body = document.body;
 
     if (drawer.classList.contains('open')) {
       drawer.classList.add('closing');
       drawer.classList.remove('open');
+      body.classList.remove('drawer-open');
+
       setTimeout(() => {
         drawer.classList.remove('closing');
         drawer.style.display = 'none';
         ham.style.display = 'block';
         cross.style.display = 'none';
-      }, 400); // Match this timing with animation duration
+      }, 400);
     } else {
       drawer.style.display = 'flex';
       drawer.classList.add('open');
+      body.classList.add('drawer-open');
       ham.style.display = 'none';
       cross.style.display = 'block';
     }
