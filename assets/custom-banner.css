@@ -1,3 +1,6 @@
+body {
+  transition: display 0.6s ease;
+}
 .custom_header {
   display: flex;
   align-items: center;
