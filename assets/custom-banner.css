@@ -261,7 +261,7 @@ body {
 }
 
 .drawer-open .custom_header {
-  transform: translateY(300px);
+  height: 140px;
 }
 .mobile_drower p {
   font-family: Jost;
