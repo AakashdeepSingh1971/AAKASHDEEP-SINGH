@@ -373,7 +373,7 @@ input:checked + label:before {
     padding: 10px;
   }
   .mainDiv#mobile {
-    position: absolute;
+    position: RELATIVE;
     bottom: 115px;
   }
   /* .rightside img {
