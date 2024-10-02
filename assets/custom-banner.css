@@ -3,6 +3,7 @@
 .menu-button::after {
   display: block;
   background-color: #000;
+  left: 0;
   position: absolute;
   height: 4px;
   width: 30px;
