@@ -243,6 +243,9 @@ body {
   background: rgba(242, 242, 242, 1);
   gap: 16px;
 }
+.mobile_drower .header-mainDiv {
+  margin-bottom: 25px;
+}
 @media (max-width: 768px) {
   .custom-banner .forDesktop {
     display: none;
