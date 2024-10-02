@@ -353,6 +353,12 @@ input:checked + label:before {
   font-size: xx-large;
   flex: 1;
 }
+#mobile {
+  display: none;
+}
+#desktop {
+  display: block;
+}
 
 @media (max-width: 768px) {
   .custom-banner .forDesktop {
@@ -366,6 +372,12 @@ input:checked + label:before {
     font-weight: 400;
     line-height: 20.8px;
     text-align: center;
+  }
+  #desktop {
+    display: none;
+  }
+  #mobile {
+    display: block;
   }
   .parentDiv {
     flex-direction: column;
