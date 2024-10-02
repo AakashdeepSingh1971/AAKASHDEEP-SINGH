@@ -263,6 +263,9 @@ body {
   line-height: 13.42px;
   text-align: center;
 }
+.open {
+  animation: animatebottom 0.4s;
+}
 @keyframes animatetop {
   0% {
     top: -300px;
