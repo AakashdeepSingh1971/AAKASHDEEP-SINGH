@@ -10,16 +10,16 @@
   transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   border-radius: 2px;
 }
-#menu-toggle:checked + .menu-button-container .menu-button::before {
+.menu-button::before .active {
   margin-top: 0px;
   transform: rotate(405deg);
 }
 
-#menu-toggle:checked + .menu-button-container .menu-button {
+.menu-button .active {
   background: rgba(255, 255, 255, 0);
 }
 
-#menu-toggle:checked + .menu-button-container .menu-button::after {
+.menu-button::after .active {
   margin-top: 0px;
   transform: rotate(-405deg);
 }
