@@ -269,7 +269,7 @@
   background: rgba(242, 242, 242, 1);
   gap: 16px;
   display: flex;
-  top: -300px;
+  top: -150px;
   position: relative;
   height: 0;
   transition: all 0.5s ease;
@@ -286,7 +286,7 @@
   margin-top: 130px;
 }
 .mobile_drower.closing {
-  top: -300px;
+  top: -150px;
   opacity: 0;
   height: 0;
   /* animation: animatebottom 1s forwards; */
