@@ -359,6 +359,7 @@ input:checked + label:before {
     display: none;
   }
   .leftside p {
+    padding-top: 24px;
     width: auto;
     font-family: Jost;
     font-size: 16px;
