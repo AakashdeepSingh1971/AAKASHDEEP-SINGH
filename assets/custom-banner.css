@@ -254,7 +254,7 @@ body,
   background: rgba(242, 242, 242, 1);
   gap: 16px;
   position: relative;
-  display: flex;
+
   z-index: 1;
 }
 
@@ -269,6 +269,7 @@ body,
   text-align: center;
 }
 .mobile_drower.open {
+  display: flex;
   animation: animatetop 1s forwards;
 }
 
