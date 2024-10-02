@@ -247,7 +247,7 @@
     padding: 10px;
   }
   .mainDiv#mobile {
-    position: RELATIVE;
+    position: relative;
     bottom: 108px;
   }
   /* .rightside img {
