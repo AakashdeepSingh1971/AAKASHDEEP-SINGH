@@ -373,7 +373,11 @@ input:checked + label:before {
     padding: 10px;
   }
   .headingForGrid {
-    text-align: center;
+    font-family: Lustria;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28.8px;
+    text-align: left;
   }
   .productGrid {
     grid-template-columns: repeat(2, 1fr);
