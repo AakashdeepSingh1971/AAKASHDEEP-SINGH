@@ -1,32 +1,35 @@
 {{ 'custom-banner.css' | asset_url | stylesheet_tag }}
-<header class="custom_header">
-  <div onclick="openMenu()">
-    <img
-      src="{{'cross.svg'| asset_url}}"
-      class="customHeaderImage cross"
-      height="100%"
-      width="100%"
-    >
-    <img
-      src="{{'hamburger-icon.svg'| asset_url}}"
-      class="customHeaderImage hamburger-icon"
-      id="mobile"
-      height="100%"
-      width="100%"
-    >
-  </div>
 
-  <h2>{{ section.settings.header_heading }}</h2>
-  <p id="desktop">{{ section.settings.header_subheading }}</p>
+<header>
+  <div class="custom_header">
+    <div onclick="openMenu()">
+      <img
+        src="{{'cross.svg'| asset_url}}"
+        class="customHeaderImage cross"
+        height="100%"
+        width="100%"
+      >
+      <img
+        src="{{'hamburger-icon.svg'| asset_url}}"
+        class="customHeaderImage hamburger-icon"
+        id="mobile"
+        height="100%"
+        width="100%"
+      >
+    </div>
 
-  <div class="header-mainDiv" id="desktop">
-    <div class="header-coloredDiv"></div>
-    <div class="header-buttonDiv">
-      <a href="{{section.settings.header_button_link}}">
-        {{ section.settings.header_button_text }}
-      </a>
+    <h2>{{ section.settings.header_heading }}</h2>
+    <p id="desktop">{{ section.settings.header_subheading }}</p>
 
-      <span class="header-customHeaderImage">&#8594;</span>
+    <div class="header-mainDiv" id="desktop">
+      <div class="header-coloredDiv"></div>
+      <div class="header-buttonDiv">
+        <a href="{{section.settings.header_button_link}}">
+          {{ section.settings.header_button_text }}
+        </a>
+
+        <span class="header-customHeaderImage">&#8594;</span>
+      </div>
     </div>
   </div>
 </header>
