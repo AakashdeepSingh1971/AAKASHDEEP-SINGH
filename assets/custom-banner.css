@@ -273,8 +273,8 @@
   z-index: 1;
 }
 .mobile_drower.open {
-  display: flex;
   animation: animatetop 1s forwards;
+  display: flex;
 }
 
 .mobile_drower.closing {
