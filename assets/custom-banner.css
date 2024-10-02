@@ -253,7 +253,7 @@ body {
   background: rgba(242, 242, 242, 1);
   gap: 16px;
   position: relative;
-  animation: animatetop 0.4s;
+
   z-index: 1;
 }
 .mobile_drower p {
@@ -263,7 +263,14 @@ body {
   line-height: 13.42px;
   text-align: center;
 }
+.mobile_drower.open {
+  display: flex;
+  animation: animatetop 0.4s forwards;
+}
 
+.mobile_drower.closing {
+  animation: animatebottom 0.4s forwards;
+}
 @keyframes animatetop {
   0% {
     top: -300px;
