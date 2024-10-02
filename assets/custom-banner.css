@@ -163,16 +163,7 @@ body {
 .header-mainDiv:hover {
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
-@key{
-  0% {
-    top: -300px;
-    opacity: 0;
-}
-100% {
-    top: 0;
-    opacity: 1;
-}
-}
+
 .header-coloredDiv {
   position: absolute;
   left: -100%;
@@ -259,9 +250,18 @@ body {
   font-weight: 400;
   line-height: 13.42px;
   text-align: center;
-      position: relative;
-    animation: animatetop 0.4s;
+  position: relative;
+  animation: animatetop 0.4s;
 }
+@keyframe animatetop {
+  0% {
+    top: -300px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
 }
 .mobile_drower .header-mainDiv {
   margin-bottom: 25px;
