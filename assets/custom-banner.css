@@ -53,6 +53,7 @@
   font-weight: 400;
   line-height: 28px;
   text-align: left;
+  margin: 0;
 }
 .rightside {
   flex: 1.5;
