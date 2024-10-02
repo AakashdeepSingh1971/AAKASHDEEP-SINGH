@@ -1,9 +1,9 @@
 {{ 'custom-banner.css' | asset_url | stylesheet_tag }}
 <header class="custom_header">
   <h2>{{ section.settings.header_heading }}</h2>
-  <p>{{ section.settings.header_subheading }}</p>
+  <p id="desktop">{{ section.settings.header_subheading }}</p>
 
-  <div class="header-mainDiv">
+  <div class="header-mainDiv" id="desktop">
     <div class="header-coloredDiv"></div>
     <div class="header-buttonDiv">
       <a href="{{section.settings.header_button_link}}">
