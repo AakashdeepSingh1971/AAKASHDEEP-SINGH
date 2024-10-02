@@ -236,7 +236,7 @@
 #desktop {
   display: block;
 }
-.cross {
+.customHeaderImage .cross {
   display: none;
 }
 .mobile_drower {
