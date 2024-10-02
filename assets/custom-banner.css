@@ -236,9 +236,11 @@
 #desktop {
   display: block;
 }
-.customHeaderImage .cross {
+.customHeaderImage .cross,
+.mobile_drower {
   display: none;
 }
+
 .mobile_drower {
   display: flex;
   flex-direction: column;
