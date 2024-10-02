@@ -2,6 +2,11 @@
 .custom-banner {
   transition: all ease-in-out;
 }
+h1,
+p,
+h2 {
+  color: black;
+}
 .custom_header {
   display: flex;
   align-items: center;
