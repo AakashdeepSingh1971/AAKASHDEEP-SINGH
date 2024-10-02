@@ -365,6 +365,9 @@ input:checked + label:before {
     line-height: 20.8px;
     text-align: center;
   }
+  .leftside {
+    padding: 10px;
+  }
   .productGrid {
     grid-template-columns: repeat(2, 1fr);
   }
