@@ -364,6 +364,14 @@ input:checked + label:before {
   .custom-banner .forDesktop {
     display: none;
   }
+  .rightside img {
+    width: 686px;
+    height: 264px;
+    left: -140px;
+    gap: 0px;
+    opacity: 0px;
+    position: relative;
+  }
   .leftside p {
     padding-top: 24px;
     width: auto;
