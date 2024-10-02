@@ -269,11 +269,11 @@ body,
   text-align: center;
 }
 .mobile_drower.open {
-  animation: animatetop 15s forwards;
+  animation: animatetop 10s forwards;
 }
 
 .mobile_drower.closing {
-  animation: animatebottom 15s forwards;
+  animation: animatebottom 10s forwards;
 }
 @keyframes animatetop {
   0% {
