@@ -233,7 +233,14 @@
 #desktop {
   display: block;
 }
-
+.mobile_drower {
+  width: 391px;
+  height: 124px;
+  top: 65px;
+  left: -7.91px;
+  padding: 25px 65.5px 25px 65.5px;
+  gap: 16px;
+}
 @media (max-width: 768px) {
   .custom-banner .forDesktop {
     display: none;
