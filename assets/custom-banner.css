@@ -243,8 +243,7 @@
 #desktop {
   display: block;
 }
-.customHeaderImage .cross,
-.mobile_drower {
+.customHeaderImage .cross {
   display: none;
 }
 
@@ -261,7 +260,7 @@
 .custom_banner,
 .parentDiv,
 #MainContent {
-  transition: all ease;
+  transition: all 0.5s ease;
 }
 .mobile_drower {
   flex-direction: column;
