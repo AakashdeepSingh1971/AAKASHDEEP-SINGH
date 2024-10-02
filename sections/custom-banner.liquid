@@ -1,11 +1,12 @@
 {{ 'custom-banner.css' | asset_url | stylesheet_tag }}
 <header class="custom_header">
-  <img
+ <div  onclick-"openMenu()">
+   <img
     src="{{'cross.svg'| asset_url}}"
     class="customHeaderImage cross"
     height="100%"
     width="100%"
-    onclick-"openMenu()"
+   
   >
   <img
     src="{{'hamburger-icon.svg'| asset_url}}"
@@ -14,6 +15,10 @@
     height="100%"
     width="100%"
   >
+
+   
+ </div>
+  
 
   <h2>{{ section.settings.header_heading }}</h2>
   <p id="desktop">{{ section.settings.header_subheading }}</p>
