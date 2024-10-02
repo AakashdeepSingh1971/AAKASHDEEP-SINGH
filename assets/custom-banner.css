@@ -279,9 +279,11 @@ body,
 @keyframes animatetop {
   0% {
     top: -300px;
+    display: none;
     opacity: 0;
   }
   100% {
+    display: flex;
     top: 0;
     opacity: 1;
   }
