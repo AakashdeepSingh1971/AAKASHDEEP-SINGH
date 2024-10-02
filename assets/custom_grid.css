@@ -353,59 +353,8 @@ input:checked + label:before {
   font-size: xx-large;
   flex: 1;
 }
-#mobile {
-  display: none;
-}
-#desktop {
-  display: block;
-}
 
 @media (max-width: 768px) {
-  .custom-banner .forDesktop {
-    display: none;
-  }
-  .rightside {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .custom_footer {
-    padding: 10px;
-  }
-  .mainDiv#mobile {
-    position: RELATIVE;
-    bottom: 108px;
-  }
-  /* .rightside img {
-    width: 686px;
-    height: 264px;
-    left: -140px;
-    gap: 0px;
-    opacity: 0px;
-    position: relative;
-  } */
-  .leftside p {
-    padding-top: 24px;
-    width: auto;
-    font-family: Jost;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 20.8px;
-    text-align: center;
-  }
-  #desktop {
-    display: none;
-  }
-  #mobile {
-    display: block;
-  }
-  .parentDiv {
-    flex-direction: column;
-  }
-  .leftside {
-    padding: 10px;
-    gap: 0;
-  }
   .headingForGrid {
     font-family: Lustria;
     font-size: 24px;
