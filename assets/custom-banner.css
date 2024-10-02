@@ -260,7 +260,7 @@ header {
   transition: transform 0.4s ease-in-out;
 }
 
-.drawer-open .header {
+.drawer-open header {
   height: 140px;
 }
 .drawer-open .custom_header {
