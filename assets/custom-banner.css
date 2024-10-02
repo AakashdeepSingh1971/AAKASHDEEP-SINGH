@@ -238,6 +238,9 @@
   .custom-banner .forDesktop {
     display: none;
   }
+  .custom_header {
+    justify-content: center;
+  }
   .rightside {
     display: flex;
     flex-direction: column;
